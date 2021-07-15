@@ -23,7 +23,6 @@ An extension Mod for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-ca
 ## Lists of Categories
 - [`CHAT`](markdown/CHAT_Category.md)
 - [`DROPS`](markdown/DROPS_Category.md)
-- [`GAMERULE`](markdown/GAMERULE_Category.md)
 - [`MISC`](markdown/MISC_Category.md)
 - [`MOBS`](markdown/MOBS_Category.md)
 - [`PLAYER`](markdown/PLAYER_Category.md)

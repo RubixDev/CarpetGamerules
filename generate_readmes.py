@@ -74,7 +74,7 @@ def read_rules() -> list[Rule]:
         rule.strict = not ('strict' in attr_dict.keys()) or attr_dict['strict'] == 'true'
         rule.categories = [category for category in attr_dict['category'][1:-1].replace(' ', '').split(',')]
         if 'GAMERULE' not in rule.categories:
-            print(f'\033[1;31mRUG category is missing in {rule.name}!\033[22m Exiting...\033[0m')
+            print(f'\033[1;31mGAMERULE category is missing in {rule.name}!\033[22m Exiting...\033[0m')
             return []
         if 'validate' in attr_dict.keys():
             validator: str = attr_dict['validate'].replace('.class', '')
@@ -96,7 +96,7 @@ def write_files(rules: list[Rule]):
 
     print('Listing all categories')
     all_categories: list[str] = list(set([item for sublist in [rule.categories for rule in rules] for item in sublist]))
-    all_categories: list[str] = [category for category in all_categories if category.upper() != 'RUG']
+    all_categories: list[str] = [category for category in all_categories if category.upper() != 'GAMERULE']
     all_categories.sort()
 
     out += f'## Lists of Categories\n'
@@ -141,12 +141,12 @@ def list_rules(rules: list[Rule], rule_headline: str) -> str:
 
 
 def curseforge_list(rules: list[Rule]):
-    out: str = f'# Rug Mod for Fabric\n\n' \
-               f'Extension Mod for [gnembon\'s fabric-carpet](https://github.com/gnembon/fabric-carpet) ' \
-               f'with some more features\n\n' \
-               f'**Visit the [GitHub page](https://github.com/RubixDev/Rug) ' \
-               f'for a more detailed explanation of all features.**\n\n' \
-               f'## List of implemented Carpet Rules\n' \
+    out: str = f'# Carpet Gamerules\n\n' \
+               f'Extension Mod for [gnembon\'s Carpet Mod](https://github.com/gnembon/fabric-carpet) ' \
+               f'that adds all vanilla gamerules to the carpet settings\n\n' \
+               f'**Visit the [GitHub page](https://github.com/RubixDev/CarpetGamerules) ' \
+               f'for a more detailed explanation.**\n\n' \
+               f'## List of Gamerules\n' \
                f'Count: {len(rules)}  \n'
     for rule in rules:
         out += f'- {rule.name}  \n'

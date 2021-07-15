@@ -1,10 +1,10 @@
-# Rug Mod for Fabric
+# Carpet Gamerules
 
-Extension Mod for [gnembon's fabric-carpet](https://github.com/gnembon/fabric-carpet) with some more features
+Extension Mod for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet) that adds all vanilla gamerules to the carpet settings
 
-**Visit the [GitHub page](https://github.com/RubixDev/Rug) for a more detailed explanation of all features.**
+**Visit the [GitHub page](https://github.com/RubixDev/CarpetGamerules) for a more detailed explanation.**
 
-## List of implemented Carpet Rules
+## List of Gamerules
 Count: 35  
 - announceAdvancements  
 - commandBlockOutput  
