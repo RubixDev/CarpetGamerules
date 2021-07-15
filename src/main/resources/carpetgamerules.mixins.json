@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "de.rubixdev.carpetgamerules.mixins",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "CarpetSettingsManagerMixin",
+    "GameRuleCommandMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
