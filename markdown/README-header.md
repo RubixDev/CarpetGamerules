@@ -8,7 +8,7 @@
 
 ![Icon](../src/main/resources/assets/carpetgamerules/icon.png)
 
-An extension Mod for [gnembon's fabric-carpet](https://github.com/gnembon/fabric-carpet) that adds all vanilla gamerules to the carpet settings.
+An extension Mod for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet) that adds all vanilla gamerules to the carpet settings.
 
 ## Related / Recommended Mods
 
