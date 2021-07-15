@@ -6,7 +6,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/RubixDev/CarpetGamerules)](https://github.com/RubixDev/CarpetGamerules/issues)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/RubixDev/CarpetGamerules)](https://github.com/RubixDev/CarpetGamerules/issues?q=is%3Aissue+is%3Aclosed)
 
-![Icon](../src/main/resources/assets/carpetgamerules/icon.png)
+![Icon](https://raw.githubusercontent.com/RubixDev/CarpetGamerules/main/src/main/resources/assets/carpetgamerules/icon.png)
 
 An extension Mod for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet) that adds all vanilla gamerules to the carpet settings.
 
