@@ -186,7 +186,7 @@ public class CarpetGamerulesSettings {
             "Damage affects survival-mode or adventure-mode players, and all mobs but bats. Pushable entities include non-spectator-mode players, any mob except bats, as well as boats and minecarts" },
         category = { GAMERULE, MOBS },
         strict = false,
-        options = { "0", "12", "24" }
+        options = { "0", "12", "24", "100" }
     )
     public static int maxEntityCramming = 24;
 
