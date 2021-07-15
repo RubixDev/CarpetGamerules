@@ -293,7 +293,7 @@ Setting to 0 or lower disables the rule
 Damage affects survival-mode or adventure-mode players, and all mobs but bats. Pushable entities include non-spectator-mode players, any mob except bats, as well as boats and minecarts
 - Type: `int`
 - Default value: `24`
-- Suggested options: `0`, `12`, `24`
+- Suggested options: `0`, `12`, `24`, `100`
 - Categories: `GAMERULE`, `MOBS`
 
 ### mobGriefing
