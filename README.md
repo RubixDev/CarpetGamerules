@@ -10,7 +10,7 @@
 
 An extension Mod for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet) that adds all vanilla gamerules to the carpet settings.
 
-## Related / Recommended Mods
+## Related / Recommended Server Mods
 
 [![Carpet Mod](https://github-readme-stats.vercel.app/api/pin/?username=gnembon&repo=fabric-carpet&theme=dracula)](https://github.com/gnembon/fabric-carpet)
 
