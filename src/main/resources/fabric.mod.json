@@ -9,8 +9,9 @@
     "RubixDev"
   ],
   "contact": {
-    "homepage": "https://github.com/RubixDev/CarpetAddonTemplate",
-    "sources": "https://github.com/RubixDev/CarpetAddonTemplate"
+    "homepage": "https://github.com/RubixDev/CarpetGamerules",
+    "sources": "https://github.com/RubixDev/CarpetGamerules",
+    "issues": "https://github.com/RubixDev/CarpetGamerules/issues"
   },
 
   "license": "CC0-1.0",
