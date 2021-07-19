@@ -4,7 +4,7 @@ import re
 import json
 
 
-with open('PythonSettings.json', 'r') as config_file:
+with open('pyconfig.json', 'r') as config_file:
     SETTINGS: dict[str, any] = json.load(config_file)
 
 

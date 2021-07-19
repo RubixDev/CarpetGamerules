@@ -2,7 +2,7 @@
 
 import json
 
-with open('PythonSettings.json', 'r') as config_file:
+with open('pyconfig.json', 'r') as config_file:
     SETTINGS = json.load(config_file)
 
 with open('gradle.properties', 'r') as gradle_file:
