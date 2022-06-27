@@ -2,11 +2,12 @@
 
 For a list of all implemented Rules go [here](../README.md)
 ## Index
-Count: 4
+Count: 5
 - [doInsomnia](#doinsomnia)
 - [doMobSpawning](#domobspawning)
 - [doPatrolSpawning](#dopatrolspawning)
 - [doTraderSpawning](#dotraderspawning)
+- [doWardenSpawning](#dowardenspawning)
 
 ## Rules in SPAWNING Category
 
@@ -41,6 +42,15 @@ Whether pillager patrols can spawn
 Spawn wandering traders
 
 Whether wandering traders can spawn
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
+- Categories: `GAMERULE`, `SPAWNING`
+
+### doWardenSpawning
+Spawn wardens
+
+Whether wardens can spawn
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`

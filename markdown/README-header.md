@@ -12,15 +12,11 @@
 
 An extension Mod for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet) that adds all vanilla gamerules to the carpet settings.
 
-## Related or Recommended Minecraft Mods and Tools
+## Related Mods and Tools
 
 [![Carpet Mod](https://github-readme-stats.vercel.app/api/pin/?username=gnembon&repo=fabric-carpet&theme=dracula&show_owner=true)](https://github.com/gnembon/fabric-carpet)
 
 [![Rug](https://github-readme-stats.vercel.app/api/pin/?username=RubixDev&repo=Rug&theme=dracula&show_owner=true)](https://github.com/RubixDev/Rug)
 
 [![CarpetConfigCreator](https://github-readme-stats.vercel.app/api/pin/?username=RubixDev&repo=CarpetConfigCreator&theme=dracula&show_owner=true)](https://github.com/RubixDev/CarpetConfigCreator)
-
-[![Ledger](https://github-readme-stats.vercel.app/api/pin/?username=QuiltServerTools&repo=Ledger&theme=dracula&show_owner=true)](https://github.com/QuiltServerTools/Ledger)
-
-[![jline4mcdsrv](https://github-readme-stats.vercel.app/api/pin/?username=chirs241097&repo=jline4mcdsrv&theme=dracula&show_owner=true)](https://github.com/chirs241097/jline4mcdsrv)
 

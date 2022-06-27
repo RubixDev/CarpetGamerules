@@ -5,7 +5,7 @@ Extension Mod for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpe
 **Visit the [GitHub page](https://github.com/RubixDev/CarpetGamerules) for a more detailed explanation.**
 
 ## List of Gamerules
-Count: 35  
+Count: 36  
 - announceAdvancements  
 - commandBlockOutput  
 - disableElytraMovementCheck  
@@ -21,6 +21,7 @@ Count: 35
 - doPatrolSpawning  
 - doTileDrops  
 - doTraderSpawning  
+- doWardenSpawning  
 - doWeatherCycle  
 - drowningDamage  
 - fallDamage  
