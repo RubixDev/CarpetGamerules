@@ -107,11 +107,18 @@ public class CarpetGamerulesSettings {
     public static boolean doTileDrops = true;
 
     @Rule(
-        desc = "Spawn wandering traders",
-        extra = "Whether wandering traders can spawn",
-        category = { GAMERULE, SPAWNING }
+            desc = "Spawn wandering traders",
+            extra = "Whether wandering traders can spawn",
+            category = { GAMERULE, SPAWNING }
     )
     public static boolean doTraderSpawning = true;
+
+    @Rule(
+            desc = "Spawn wardens",
+            extra = "Whether wardens can spawn",
+            category = { GAMERULE, SPAWNING }
+    )
+    public static boolean doWardenSpawning = true;
 
     @Rule(
         desc = "Update weather",
