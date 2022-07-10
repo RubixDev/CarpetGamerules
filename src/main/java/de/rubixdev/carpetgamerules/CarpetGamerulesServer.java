@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
-    public static final String VERSION = "1.0.0";
+    public static final String VERSION = "1.1.1";
     public static final Logger LOGGER = LogManager.getLogger("CarpetGamerules");
 
     public static boolean ruleChangeIsFromGameruleCommand = false;
@@ -54,6 +54,10 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
             @Override
             public <T extends GameRules.Rule<T>> void visit(GameRules.Key<T> key, GameRules.Type<T> type) {
                 ParsedRule<?> carpetRule = CarpetServer.settingsManager.getRule(key.getName());
+                if (carpetRule == null) {
+                    LOGGER.warn("No associated carpet rule found for `" + key.getName() + "`, skipping");
+                    return;
+                }
                 boolean isNonDefaultInConfig = !carpetRule.getAsString().equals(gameruleDefaults.get(key.getName()));
 
                 if (isNonDefaultInConfig) {
