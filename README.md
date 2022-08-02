@@ -10,7 +10,7 @@
 
 ![Icon](https://raw.githubusercontent.com/RubixDev/CarpetGamerules/main/src/main/resources/assets/carpetgamerules/icon.png)
 
-An extension Mod for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet) that adds all vanilla gamerules to the carpet settings.
+An extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet) that adds all vanilla gamerules to the carpet settings.
 
 ## Related Mods and Tools
 

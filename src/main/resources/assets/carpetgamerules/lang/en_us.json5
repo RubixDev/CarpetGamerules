@@ -1,0 +1,119 @@
+{
+  // announceAdvancements
+  "carpet.rule.announceAdvancements.desc": "Announce advancements",
+  "carpet.rule.announceAdvancements.extra.0": "Whether advancements should be announced in chat",
+  // commandBlockOutput
+  "carpet.rule.commandBlockOutput.desc": "Broadcast command block output",
+  "carpet.rule.commandBlockOutput.extra.0": "Whether command blocks should notify admins when they perform commands",
+  // disableElytraMovementCheck
+  "carpet.rule.disableElytraMovementCheck.desc": "Disable elytra movement check",
+  "carpet.rule.disableElytraMovementCheck.extra.0": "Whether the server should skip checking player speed when the player is wearing elytra. Often helps with jittering due to lag in multiplayer",
+  // disableRaids
+  "carpet.rule.disableRaids.desc": "Disable raids",
+  "carpet.rule.disableRaids.extra.0": "Whether raids are disabled",
+  // doDaylightCycle
+  "carpet.rule.doDaylightCycle.desc": "Advance time of day",
+  "carpet.rule.doDaylightCycle.extra.0": "Whether the daylight cycle and moon phases progress",
+  // doEntityDrops
+  "carpet.rule.doEntityDrops.desc": "Drop entity equipment",
+  "carpet.rule.doEntityDrops.extra.0": "Controls drops from minecarts (including inventories), item frames, boats, etc.",
+  // doFireTick
+  "carpet.rule.doFireTick.desc": "Update fire",
+  "carpet.rule.doFireTick.extra.0": "Whether fire should spread and naturally extinguish",
+  // doImmediateRespawn
+  "carpet.rule.doImmediateRespawn.desc": "Respawn immediately",
+  "carpet.rule.doImmediateRespawn.extra.0": "Players respawn immediately without showing the death screen",
+  // doInsomnia
+  "carpet.rule.doInsomnia.desc": "Spawn phantoms",
+  "carpet.rule.doInsomnia.extra.0": "Whether phantoms can spawn in the nighttime",
+  // doLimitedCrafting
+  "carpet.rule.doLimitedCrafting.desc": "Require recipe for crafting",
+  "carpet.rule.doLimitedCrafting.extra.0": "If enabled, players will be able to craft only unlocked recipes",
+  // doMobLoot
+  "carpet.rule.doMobLoot.desc": "Drop mob loot",
+  "carpet.rule.doMobLoot.extra.0": "Controls resource drops from mobs, including experience orbs",
+  // doMobSpawning
+  "carpet.rule.doMobSpawning.desc": "Spawn mobs",
+  "carpet.rule.doMobSpawning.extra.0": "Some entities might have seperate rules. Does not affect monster spawners",
+  // doPatrolSpawning
+  "carpet.rule.doPatrolSpawning.desc": "Spawn pillager patrols",
+  "carpet.rule.doPatrolSpawning.extra.0": "Whether pillager patrols can spawn",
+  // doTileDrops
+  "carpet.rule.doTileDrops.desc": "Drop blocks",
+  "carpet.rule.doTileDrops.extra.0": "Controls resource drops from blocks, including experience orbs",
+  // doTraderSpawning
+  "carpet.rule.doTraderSpawning.desc": "Spawn wandering traders",
+  "carpet.rule.doTraderSpawning.extra.0": "Whether wandering traders can spawn",
+  // doWardenSpawning
+  "carpet.rule.doWardenSpawning.desc": "Spawn wardens",
+  "carpet.rule.doWardenSpawning.extra.0": "Whether wardens can spawn",
+  // doWeatherCycle
+  "carpet.rule.doWeatherCycle.desc": "Update weather",
+  "carpet.rule.doWeatherCycle.extra.0": "Whether the weather can change naturally. The `/weather` command can still change weather",
+  // drowningDamage
+  "carpet.rule.drowningDamage.desc": "Deal drowning damage",
+  "carpet.rule.drowningDamage.extra.0": "Whether the player should take damage when drowning",
+  // fallDamage
+  "carpet.rule.fallDamage.desc": "Deal fall damage",
+  "carpet.rule.fallDamage.extra.0": "Whether the player should take fall damage",
+  // fireDamage
+  "carpet.rule.fireDamage.desc": "Deal fire damage",
+  "carpet.rule.fireDamage.extra.0": "Whether the player should take damage in fire, lava, campfires, or on magma blocks",
+  // forgiveDeadPlayers
+  "carpet.rule.forgiveDeadPlayers.desc": "Forgive dead players",
+  "carpet.rule.forgiveDeadPlayers.extra.0": "Angered neutral mobs stop being angry when the targeted player dies nearby",
+  // freezeDamage
+  "carpet.rule.freezeDamage.desc": "Deal freeze damage",
+  "carpet.rule.freezeDamage.extra.0": "Whether the player should take damage when inside powder snow",
+  // keepInventory
+  "carpet.rule.keepInventory.desc": "Keep inventory after death",
+  "carpet.rule.keepInventory.extra.0": "Whether the player should keep items and experience in their inventory after death",
+  // logAdminCommands
+  "carpet.rule.logAdminCommands.desc": "Broadcast admin commands",
+  "carpet.rule.logAdminCommands.extra.0": "Whether to log admin commands to server log",
+  // maxCommandChainLength
+  "carpet.rule.maxCommandChainLength.desc": "Command chain size limit",
+  "carpet.rule.maxCommandChainLength.extra.0": "The maximum length of a chain of commands that can be executed during one tick. Applies to command blocks and functions",
+  // maxEntityCramming
+  "carpet.rule.maxEntityCramming.desc": "Entity cramming threshold",
+  "carpet.rule.maxEntityCramming.extra.0": "The maximum number of pushable entities a mob or player can push, before taking 3 suffocation damage per half-second",
+  "carpet.rule.maxEntityCramming.extra.1": "Setting to 0 or lower disables the rule",
+  "carpet.rule.maxEntityCramming.extra.2": "Damage affects survival-mode or adventure-mode players, and all mobs but bats. Pushable entities include non-spectator-mode players, any mob except bats, as well as boats and minecarts",
+  // mobGriefing
+  "carpet.rule.mobGriefing.desc": "Allow destructive mob actions",
+  "carpet.rule.mobGriefing.extra.0": "Whether creepers, zombies, endermen, ghasts, withers, ender dragons, rabbits, sheep, villagers, silverfish, snow golems, and end crystals should be able to change blocks and whether mobs can pick up items, which also disables bartering",
+  "carpet.rule.mobGriefing.extra.1": "This also affects the capability of zombie-like creatures like zombified piglins and drowned to pathfind to turtle eggs",
+  // naturalRegeneration
+  "carpet.rule.naturalRegeneration.desc": "Regenerate health",
+  "carpet.rule.naturalRegeneration.extra.0": "Whether the player can regenerate health naturally if their hunger is full enough",
+  "carpet.rule.naturalRegeneration.extra.1": "Doesn't affect external healing, such as golden apples, the Regeneration effect, etc.",
+  // playersSleepingPercentage
+  "carpet.rule.playersSleepingPercentage.desc": "Sleep percentage",
+  "carpet.rule.playersSleepingPercentage.extra.0": "The percentage of players who must be sleeping to skip the night",
+  // randomTickSpeed
+  "carpet.rule.randomTickSpeed.desc": "Random tick speed rate",
+  "carpet.rule.randomTickSpeed.extra.0": "How often a random block tick occurs (such as plant growth, leaf decay, etc.) per chunk section per game tick",
+  "carpet.rule.randomTickSpeed.extra.1": "0 and negative values disables random ticks, higher numbers increase random ticks",
+  "carpet.rule.randomTickSpeed.extra.2": "Setting to a high integer results in high speeds of decay and growth",
+  "carpet.rule.randomTickSpeed.extra.3": "Numbers over 4096 make plant growth or leaf decay instantaneous",
+  // reducedDebugInfo
+  "carpet.rule.reducedDebugInfo.desc": "Reduce debug info",
+  "carpet.rule.reducedDebugInfo.extra.0": "Limits contents of debug screen",
+  // sendCommandFeedback
+  "carpet.rule.sendCommandFeedback.desc": "Send command feedback",
+  "carpet.rule.sendCommandFeedback.extra.0": "Whether the feedback from commands executed by a player should show up in chat",
+  "carpet.rule.sendCommandFeedback.extra.1": "Also affects the default behavior of whether command blocks store their output text",
+  // showDeathMessages
+  "carpet.rule.showDeathMessages.desc": "Show death messages",
+  "carpet.rule.showDeathMessages.extra.0": "Whether death messages are put into chat when a player dies",
+  "carpet.rule.showDeathMessages.extra.1": "Also affects whether a message is sent to the pet's owner when the pet dies",
+  // spawnRadius
+  "carpet.rule.spawnRadius.desc": "Respawn location radius",
+  "carpet.rule.spawnRadius.extra.0": "The number of blocks outward from the world spawn coordinates that a player spawns in when first joining a server or when dying without a personal spawnpoint",
+  // spectatorsGenerateChunks
+  "carpet.rule.spectatorsGenerateChunks.desc": "Allow spectators to generate terrain",
+  "carpet.rule.spectatorsGenerateChunks.extra.0": "Whether players in spectator mode can generate chunks",
+  // universalAnger
+  "carpet.rule.universalAnger.desc": "Universal anger",
+  "carpet.rule.universalAnger.extra.0": "Angered neutral mobs attack any nearby player, not just the player that angered them. Works best if `forgiveDeadPlayers` is disabled"
+}

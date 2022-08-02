@@ -1,6 +1,7 @@
 package de.rubixdev.carpetgamerules.mixins;
 
 import carpet.CarpetServer;
+import carpet.api.settings.InvalidRuleValueException;
 import com.mojang.brigadier.context.CommandContext;
 import de.rubixdev.carpetgamerules.CarpetGamerulesServer;
 import net.minecraft.server.command.GameRuleCommand;
@@ -15,10 +16,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class GameRuleCommandMixin {
     @Inject(method = "executeSet", at = @At("RETURN"))
     private static <T extends GameRules.Rule<T>> void updateCarpetSetting(
-            CommandContext<ServerCommandSource> context, GameRules.Key<T> key, CallbackInfoReturnable<Integer> cir) {
+            CommandContext<ServerCommandSource> context, GameRules.Key<T> key, CallbackInfoReturnable<Integer> cir)
+            throws InvalidRuleValueException {
         CarpetGamerulesServer.ruleChangeIsFromGameruleCommand = true;
         CarpetServer.settingsManager
-                .getRule(key.getName())
+                .getCarpetRule(key.getName())
                 .set(
                         context.getSource(),
                         context.getSource().getServer().getGameRules().get(key).toString());
