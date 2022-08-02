@@ -13,16 +13,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SettingsManager.class)
 public class CarpetSettingsManagerMixin {
     @Inject(
-        method = "listAllSettings",
-        at = @At(value = "INVOKE", target = "Lcarpet/settings/SettingsManager;getCategories()Ljava/lang/Iterable;"),
-        remap = false
-    )
+            method = "listAllSettings",
+            at = @At(value = "INVOKE", target = "Lcarpet/settings/SettingsManager;getCategories()Ljava/lang/Iterable;"),
+            remap = false)
     private void printCarpetGamerulesVersion(ServerCommandSource source, CallbackInfoReturnable<Integer> cir) {
         Messenger.m(
-            source,
-            "g CarpetGamerules ",
-            "g " + Translations.tr("ui.version", "version") + ": ",
-            "g " + CarpetGamerulesServer.VERSION
-        );
+                source,
+                "g CarpetGamerules ",
+                "g " + Translations.tr("ui.version", "version") + ": ",
+                "g " + CarpetGamerulesServer.VERSION);
     }
 }

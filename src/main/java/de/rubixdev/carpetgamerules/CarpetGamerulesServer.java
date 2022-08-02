@@ -4,15 +4,14 @@ import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import carpet.settings.ParsedRule;
 import carpet.settings.Rule;
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.GameRules;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.Map;
 
 public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
     public static final String VERSION = "1.2.1";
@@ -63,7 +62,9 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
                 if (isNonDefaultInConfig) {
                     updateGameruleValue(carpetRule, key, server);
                 } else {
-                    carpetRule.set(server.getCommandSource(), server.getGameRules().get(key).toString());
+                    carpetRule.set(
+                            server.getCommandSource(),
+                            server.getGameRules().get(key).toString());
                 }
 
                 LOGGER.info("Read gamerule " + key.getName() + " with value " + carpetRule.getAsString());
@@ -83,10 +84,12 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
 
     private void updateGameruleValue(ParsedRule<?> carpetRule, GameRules.Key<?> key, MinecraftServer server) {
         if (carpetRule.type == boolean.class) {
-            GameRules.BooleanRule gamerule = (GameRules.BooleanRule) server.getGameRules().get(key);
+            GameRules.BooleanRule gamerule =
+                    (GameRules.BooleanRule) server.getGameRules().get(key);
             gamerule.set(carpetRule.getBoolValue(), server);
         } else {
-            GameRules.IntRule gamerule = (GameRules.IntRule) server.getGameRules().get(key);
+            GameRules.IntRule gamerule =
+                    (GameRules.IntRule) server.getGameRules().get(key);
             gamerule.set((Integer) carpetRule.get(), server);
         }
     }
