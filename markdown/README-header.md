@@ -7,6 +7,7 @@
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/RubixDev/CarpetGamerules?style=for-the-badge)](https://github.com/RubixDev/CarpetGamerules/issues?q=is%3Aissue+is%3Aclosed)
 [![CurseForge Total Downloads](http://cf.way2muchnoise.eu/full_504123_downloads.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/carpetgamerules/files)
 [![CurseForge All Versions](http://cf.way2muchnoise.eu/versions/For%20MC_504123_all.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/carpetgamerules)
+[![Modrinth](https://img.shields.io/modrinth/dt/carpetgamerules?color=%231bd96a&label=Modrinth%20downloads&style=for-the-badge)](https://modrinth.com/mod/carpetgamerules)
 
 ![Icon](https://raw.githubusercontent.com/RubixDev/CarpetGamerules/main/src/main/resources/assets/carpetgamerules/icon.png)
 
