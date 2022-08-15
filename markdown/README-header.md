@@ -19,5 +19,5 @@ An extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet
 
 [![Rug](https://github-readme-stats.vercel.app/api/pin/?username=RubixDev&repo=Rug&theme=dracula&show_owner=true)](https://github.com/RubixDev/Rug)
 
-[![CarpetConfigCreator](https://github-readme-stats.vercel.app/api/pin/?username=RubixDev&repo=CarpetConfigCreator&theme=dracula&show_owner=true)](https://github.com/RubixDev/CarpetConfigCreator)
+[![carpet-config-creator](https://github-readme-stats.vercel.app/api/pin/?username=RubixDev&repo=carpet-config-creator&theme=dracula&show_owner=true)](https://github.com/RubixDev/carpet-config-creator)
 
