@@ -31,9 +31,11 @@ An extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet
 - [`WORLD_UPDATES`](markdown/WORLD_UPDATES_Category.md)
 
 ## Index
-Count: 36
+Count: 45
 - [announceAdvancements](#announceadvancements)
+- [blockExplosionDropDecay](#blockexplosiondropdecay)
 - [commandBlockOutput](#commandblockoutput)
+- [commandModificationBlockLimit](#commandmodificationblocklimit)
 - [disableElytraMovementCheck](#disableelytramovementcheck)
 - [disableRaids](#disableraids)
 - [doDaylightCycle](#dodaylightcycle)
@@ -47,6 +49,7 @@ Count: 36
 - [doPatrolSpawning](#dopatrolspawning)
 - [doTileDrops](#dotiledrops)
 - [doTraderSpawning](#dotraderspawning)
+- [doVinesSpread](#dovinesspread)
 - [doWardenSpawning](#dowardenspawning)
 - [doWeatherCycle](#doweathercycle)
 - [drowningDamage](#drowningdamage)
@@ -54,10 +57,13 @@ Count: 36
 - [fireDamage](#firedamage)
 - [forgiveDeadPlayers](#forgivedeadplayers)
 - [freezeDamage](#freezedamage)
+- [globalSoundEvents](#globalsoundevents)
 - [keepInventory](#keepinventory)
+- [lavaSourceConversion](#lavasourceconversion)
 - [logAdminCommands](#logadmincommands)
 - [maxCommandChainLength](#maxcommandchainlength)
 - [maxEntityCramming](#maxentitycramming)
+- [mobExplosionDropDecay](#mobexplosiondropdecay)
 - [mobGriefing](#mobgriefing)
 - [naturalRegeneration](#naturalregeneration)
 - [playersSleepingPercentage](#playerssleepingpercentage)
@@ -65,9 +71,12 @@ Count: 36
 - [reducedDebugInfo](#reduceddebuginfo)
 - [sendCommandFeedback](#sendcommandfeedback)
 - [showDeathMessages](#showdeathmessages)
+- [snowAccumulationHeight](#snowaccumulationheight)
 - [spawnRadius](#spawnradius)
 - [spectatorsGenerateChunks](#spectatorsgeneratechunks)
+- [tntExplosionDropDecay](#tntexplosiondropdecay)
 - [universalAnger](#universalanger)
+- [waterSourceConversion](#watersourceconversion)
 
 ## Implemented Rules
 
@@ -80,6 +89,15 @@ Whether advancements should be announced in chat
 - Required options: `true`, `false`
 - Categories: `CHAT`, `GAMERULE`
 
+### blockExplosionDropDecay
+In block interaction explosions, some blocks won't drop their loot
+
+Some of the drops from blocks destroyed by explosions caused by block interactions are lost in the explosion.
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
+- Categories: `DROPS`, `GAMERULE`
+
 ### commandBlockOutput
 Broadcast command block output
 
@@ -88,6 +106,15 @@ Whether command blocks should notify admins when they perform commands
 - Default value: `true`
 - Required options: `true`, `false`
 - Categories: `CHAT`, `GAMERULE`
+
+### commandModificationBlockLimit
+Command Modification Block Limit
+
+Number of blocks that can be changed at once by one command, such as fill or clone.
+- Type: `int`
+- Default value: `32768`
+- Suggested options: `32768`, `1000000`, `2147483647`
+- Categories: `GAMERULE`, `MISC`
 
 ### disableElytraMovementCheck
 Disable elytra movement check
@@ -206,6 +233,15 @@ Whether wandering traders can spawn
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `SPAWNING`
 
+### doVinesSpread
+Vines spread
+
+Controls whether or not the Vines block spreads randomly to adjacent blocks. Does not affect other type of vine blocks such as Weeping Vines, Twisting Vines, etc.
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
+- Categories: `GAMERULE`, `WORLD_UPDATES`
+
 ### doWardenSpawning
 Spawn wardens
 
@@ -269,6 +305,15 @@ Whether the player should take damage when inside powder snow
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `PLAYER`
 
+### globalSoundEvents
+Global sound events
+
+When certain game events happen, like a boss spawning, the sound is heard everywhere.
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
+- Categories: `GAMERULE`, `MISC`
+
 ### keepInventory
 Keep inventory after death
 
@@ -277,6 +322,15 @@ Whether the player should keep items and experience in their inventory after dea
 - Default value: `false`
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `PLAYER`
+
+### lavaSourceConversion
+Lava converts to source
+
+When flowing lava is surrounded on two sides by lava sources it converts into a source.
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `GAMERULE`, `WORLD_UPDATES`
 
 ### logAdminCommands
 Broadcast admin commands
@@ -299,18 +353,27 @@ The maximum length of a chain of commands that can be executed during one tick. 
 ### maxEntityCramming
 Entity cramming threshold
 
-The maximum number of pushable entities a mob or player can push, before taking 3 suffocation damage per half-second  
-Setting to 0 or lower disables the rule  
-Damage affects survival-mode or adventure-mode players, and all mobs but bats. Pushable entities include non-spectator-mode players, any mob except bats, as well as boats and minecarts
+The maximum number of pushable entities a mob or player can push, before taking 3 suffocation damage per half-second.\
+Setting to 0 or lower disables the rule.\
+Damage affects survival-mode or adventure-mode players, and all mobs but bats. Pushable entities include non-spectator-mode players, any mob except bats, as well as boats and minecarts.
 - Type: `int`
 - Default value: `24`
 - Suggested options: `0`, `12`, `24`, `100`
 - Categories: `GAMERULE`, `MOBS`
 
+### mobExplosionDropDecay
+In mob explosions, some blocks won't drop their loot
+
+Some of the drops from blocks destroyed by explosions caused by mobs are lost in the explosion.
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
+- Categories: `DROPS`, `GAMERULE`
+
 ### mobGriefing
 Allow destructive mob actions
 
-Whether creepers, zombies, endermen, ghasts, withers, ender dragons, rabbits, sheep, villagers, silverfish, snow golems, and end crystals should be able to change blocks and whether mobs can pick up items, which also disables bartering  
+Whether creepers, zombies, endermen, ghasts, withers, ender dragons, rabbits, sheep, villagers, silverfish, snow golems, and end crystals should be able to change blocks and whether mobs can pick up items, which also disables bartering\
 This also affects the capability of zombie-like creatures like zombified piglins and drowned to pathfind to turtle eggs
 - Type: `boolean`
 - Default value: `true`
@@ -320,7 +383,7 @@ This also affects the capability of zombie-like creatures like zombified piglins
 ### naturalRegeneration
 Regenerate health
 
-Whether the player can regenerate health naturally if their hunger is full enough  
+Whether the player can regenerate health naturally if their hunger is full enough\
 Doesn't affect external healing, such as golden apples, the Regeneration effect, etc.
 - Type: `boolean`
 - Default value: `true`
@@ -339,9 +402,9 @@ The percentage of players who must be sleeping to skip the night
 ### randomTickSpeed
 Random tick speed rate
 
-How often a random block tick occurs (such as plant growth, leaf decay, etc.) per chunk section per game tick  
-0 and negative values disables random ticks, higher numbers increase random ticks  
-Setting to a high integer results in high speeds of decay and growth  
+How often a random block tick occurs (such as plant growth, leaf decay, etc.) per chunk section per game tick\
+0 and negative values disables random ticks, higher numbers increase random ticks\
+Setting to a high integer results in high speeds of decay and growth\
 Numbers over 4096 make plant growth or leaf decay instantaneous
 - Type: `int`
 - Default value: `3`
@@ -360,7 +423,7 @@ Limits contents of debug screen
 ### sendCommandFeedback
 Send command feedback
 
-Whether the feedback from commands executed by a player should show up in chat  
+Whether the feedback from commands executed by a player should show up in chat\
 Also affects the default behavior of whether command blocks store their output text
 - Type: `boolean`
 - Default value: `true`
@@ -370,12 +433,21 @@ Also affects the default behavior of whether command blocks store their output t
 ### showDeathMessages
 Show death messages
 
-Whether death messages are put into chat when a player dies  
+Whether death messages are put into chat when a player dies\
 Also affects whether a message is sent to the pet's owner when the pet dies
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`
 - Categories: `CHAT`, `GAMERULE`
+
+### snowAccumulationHeight
+Snow accumulation height
+
+When it snows, layers of snow form on the ground up to at most this number of layers.
+- Type: `int`
+- Default value: `1`
+- Suggested options: `0`, `1`, `8`
+- Categories: `GAMERULE`, `WORLD_UPDATES`
 
 ### spawnRadius
 Respawn location radius
@@ -395,6 +467,15 @@ Whether players in spectator mode can generate chunks
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `PLAYER`
 
+### tntExplosionDropDecay
+In TNT explosions, some blocks won't drop their loot
+
+Some of the drops from blocks destroyed by explosions caused by TNT are lost in the explosion.
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `DROPS`, `GAMERULE`
+
 ### universalAnger
 Universal anger
 
@@ -403,3 +484,12 @@ Angered neutral mobs attack any nearby player, not just the player that angered 
 - Default value: `false`
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `MOBS`
+
+### waterSourceConversion
+Water converts to source
+
+When flowing water is surrounded on two sides by water sources it converts into a source.
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
+- Categories: `GAMERULE`, `WORLD_UPDATES`

@@ -93,7 +93,7 @@ Whether the player should keep items and experience in their inventory after dea
 ### naturalRegeneration
 Regenerate health
 
-Whether the player can regenerate health naturally if their hunger is full enough  
+Whether the player can regenerate health naturally if their hunger is full enough\
 Doesn't affect external healing, such as golden apples, the Regeneration effect, etc.
 - Type: `boolean`
 - Default value: `true`

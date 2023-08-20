@@ -5,9 +5,11 @@ Extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet) t
 **Visit the [GitHub page](https://github.com/RubixDev/CarpetGamerules) for a more detailed explanation.**
 
 ## List of Gamerules
-Count: 36
+Count: 45
 - announceAdvancements
+- blockExplosionDropDecay
 - commandBlockOutput
+- commandModificationBlockLimit
 - disableElytraMovementCheck
 - disableRaids
 - doDaylightCycle
@@ -21,6 +23,7 @@ Count: 36
 - doPatrolSpawning
 - doTileDrops
 - doTraderSpawning
+- doVinesSpread
 - doWardenSpawning
 - doWeatherCycle
 - drowningDamage
@@ -28,10 +31,13 @@ Count: 36
 - fireDamage
 - forgiveDeadPlayers
 - freezeDamage
+- globalSoundEvents
 - keepInventory
+- lavaSourceConversion
 - logAdminCommands
 - maxCommandChainLength
 - maxEntityCramming
+- mobExplosionDropDecay
 - mobGriefing
 - naturalRegeneration
 - playersSleepingPercentage
@@ -39,6 +45,9 @@ Count: 36
 - reducedDebugInfo
 - sendCommandFeedback
 - showDeathMessages
+- snowAccumulationHeight
 - spawnRadius
 - spectatorsGenerateChunks
+- tntExplosionDropDecay
 - universalAnger
+- waterSourceConversion

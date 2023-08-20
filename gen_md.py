@@ -17,7 +17,7 @@ with open(SETTINGS['languageFile'], 'r') as lang_file:
 DESCRIPTIONS: dict[str, dict] = {}
 for k, v in descriptions_raw.items():
     rule_name = re.compile(
-        r'carpet\.rule\.(\w+)\.(?:desc|extra\.\d+)').search(k).group(1)
+        r'carpetgamerules\.rule\.(\w+)\.(?:desc|extra\.\d+)').search(k).group(1)
     if rule_name not in DESCRIPTIONS.keys():
         DESCRIPTIONS[rule_name] = {
             'desc': '',
@@ -55,8 +55,9 @@ class Rule:
 
         self.categories.sort()
 
+        bs = '\\'
         out = f'### {self.name}\n' \
-              f'{self.desc}{nl + nl + ("  " + nl).join(self.extra) if self.extra else ""}\n' \
+              f'{self.desc}{nl + nl + (bs + nl).join(self.extra) if self.extra else ""}\n' \
               f'- Type: `{self.type}`\n' \
               f'- Default value: `{self.value}`\n' \
               f'- {"Required" if self.strict else "Suggested"} ' \

@@ -32,9 +32,9 @@ Angered neutral mobs stop being angry when the targeted player dies nearby
 ### maxEntityCramming
 Entity cramming threshold
 
-The maximum number of pushable entities a mob or player can push, before taking 3 suffocation damage per half-second  
-Setting to 0 or lower disables the rule  
-Damage affects survival-mode or adventure-mode players, and all mobs but bats. Pushable entities include non-spectator-mode players, any mob except bats, as well as boats and minecarts
+The maximum number of pushable entities a mob or player can push, before taking 3 suffocation damage per half-second.\
+Setting to 0 or lower disables the rule.\
+Damage affects survival-mode or adventure-mode players, and all mobs but bats. Pushable entities include non-spectator-mode players, any mob except bats, as well as boats and minecarts.
 - Type: `int`
 - Default value: `24`
 - Suggested options: `0`, `12`, `24`, `100`
@@ -43,7 +43,7 @@ Damage affects survival-mode or adventure-mode players, and all mobs but bats. P
 ### mobGriefing
 Allow destructive mob actions
 
-Whether creepers, zombies, endermen, ghasts, withers, ender dragons, rabbits, sheep, villagers, silverfish, snow golems, and end crystals should be able to change blocks and whether mobs can pick up items, which also disables bartering  
+Whether creepers, zombies, endermen, ghasts, withers, ender dragons, rabbits, sheep, villagers, silverfish, snow golems, and end crystals should be able to change blocks and whether mobs can pick up items, which also disables bartering\
 This also affects the capability of zombie-like creatures like zombified piglins and drowned to pathfind to turtle eggs
 - Type: `boolean`
 - Default value: `true`

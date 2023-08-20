@@ -15,8 +15,17 @@ public class CarpetGamerulesSettings {
     @Rule(categories = {GAMERULE, CHAT})
     public static boolean announceAdvancements = true;
 
+    @Rule(categories = {GAMERULE, DROPS})
+    public static boolean blockExplosionDropDecay = true;
+
     @Rule(categories = {GAMERULE, CHAT})
     public static boolean commandBlockOutput = true;
+
+    @Rule(
+            categories = {GAMERULE, MISC},
+            strict = false,
+            options = {"32768", "1000000", "2147483647"})
+    public static int commandModificationBlockLimit = 32768;
 
     @Rule(categories = {GAMERULE, PLAYER})
     public static boolean disableElytraMovementCheck = false;
@@ -57,6 +66,9 @@ public class CarpetGamerulesSettings {
     @Rule(categories = {GAMERULE, SPAWNING})
     public static boolean doTraderSpawning = true;
 
+    @Rule(categories = {GAMERULE, WORLD_UPDATES})
+    public static boolean doVinesSpread = true;
+
     @Rule(categories = {GAMERULE, SPAWNING})
     public static boolean doWardenSpawning = true;
 
@@ -78,8 +90,14 @@ public class CarpetGamerulesSettings {
     @Rule(categories = {GAMERULE, PLAYER})
     public static boolean freezeDamage = true;
 
+    @Rule(categories = {GAMERULE, MISC})
+    public static boolean globalSoundEvents = true;
+
     @Rule(categories = {GAMERULE, PLAYER})
     public static boolean keepInventory = false;
+
+    @Rule(categories = {GAMERULE, WORLD_UPDATES})
+    public static boolean lavaSourceConversion = false;
 
     @Rule(categories = {GAMERULE, CHAT})
     public static boolean logAdminCommands = true;
@@ -95,6 +113,9 @@ public class CarpetGamerulesSettings {
             strict = false,
             options = {"0", "12", "24", "100"})
     public static int maxEntityCramming = 24;
+
+    @Rule(categories = {GAMERULE, DROPS})
+    public static boolean mobExplosionDropDecay = true;
 
     @Rule(categories = {GAMERULE, MOBS})
     public static boolean mobGriefing = true;
@@ -124,6 +145,12 @@ public class CarpetGamerulesSettings {
     public static boolean showDeathMessages = true;
 
     @Rule(
+            categories = {GAMERULE, WORLD_UPDATES},
+            strict = false,
+            options = {"0", "1", "8"})
+    public static int snowAccumulationHeight = 1;
+
+    @Rule(
             categories = {GAMERULE, PLAYER},
             strict = false,
             options = {"0", "1", "5", "10", "50"})
@@ -132,8 +159,14 @@ public class CarpetGamerulesSettings {
     @Rule(categories = {GAMERULE, PLAYER})
     public static boolean spectatorsGenerateChunks = true;
 
+    @Rule(categories = {GAMERULE, DROPS})
+    public static boolean tntExplosionDropDecay = false;
+
     @Rule(categories = {GAMERULE, MOBS})
     public static boolean universalAnger = false;
+
+    @Rule(categories = {GAMERULE, WORLD_UPDATES})
+    public static boolean waterSourceConversion = true;
 }
 
 // BUGFIX

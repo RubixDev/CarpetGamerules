@@ -1,6 +1,5 @@
 package de.rubixdev.carpetgamerules.mixins;
 
-import carpet.CarpetServer;
 import carpet.api.settings.InvalidRuleValueException;
 import com.mojang.brigadier.context.CommandContext;
 import de.rubixdev.carpetgamerules.CarpetGamerulesServer;
@@ -19,7 +18,7 @@ public class GameRuleCommandMixin {
             CommandContext<ServerCommandSource> context, GameRules.Key<T> key, CallbackInfoReturnable<Integer> cir)
             throws InvalidRuleValueException {
         CarpetGamerulesServer.ruleChangeIsFromGameruleCommand = true;
-        CarpetServer.settingsManager
+        CarpetGamerulesServer.settingsManager
                 .getCarpetRule(key.getName())
                 .set(
                         context.getSource(),
