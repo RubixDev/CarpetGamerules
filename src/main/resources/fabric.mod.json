@@ -14,7 +14,7 @@
     "issues": "https://github.com/RubixDev/CarpetGamerules/issues"
   },
 
-  "license": "GPL-2.0-only",
+  "license": "GPL-3.0-only",
   "icon": "assets/carpetgamerules/icon.png",
 
   "environment": "*",
@@ -28,10 +28,10 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.11.3",
-    "carpet": ">=1.4.56",
+    "fabricloader": ">=0.14.22",
+    "carpet": ">=1.4.112",
     "java": ">=17",
-    "minecraft": "1.18.x"
+    "minecraft": ">=1.20"
   },
   "suggests": {
   },
