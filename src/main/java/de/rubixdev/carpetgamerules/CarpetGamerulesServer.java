@@ -2,23 +2,19 @@ package de.rubixdev.carpetgamerules;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
-import carpet.api.settings.*;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import java.io.IOException;
-import java.io.InputStream;
+import carpet.settings.ParsedRule;
+import carpet.settings.Rule;
+import carpet.settings.SettingsManager;
 import java.lang.reflect.Field;
-import java.nio.charset.StandardCharsets;
-import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.GameRules;
-import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -70,59 +66,37 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
     }
 
     @Override
-    public SettingsManager extensionSettingsManager() {
+    public SettingsManager customSettingsManager() {
         return settingsManager;
     }
 
     @Override
-    public Map<String, String> canHasTranslations(String lang) {
-        InputStream langFile = CarpetGamerulesServer.class
-                .getClassLoader()
-                .getResourceAsStream("assets/" + MOD_ID + "/lang/%s.json".formatted(lang));
-        if (langFile == null) {
-            // we don't have that language
-            return Collections.emptyMap();
-        }
-        String jsonData;
-        try {
-            jsonData = IOUtils.toString(langFile, StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            return Collections.emptyMap();
-        }
-        Gson gson = new GsonBuilder().setLenient().create(); // lenient allows for comments
-        return gson.fromJson(jsonData, new TypeToken<Map<String, String>>() {}.getType());
-    }
-
-    @Override
     public void onServerLoadedWorlds(MinecraftServer server) {
+        Set<String> allGameRules = new HashSet<>();
+
         GameRules.accept(new GameRules.Visitor() {
             @Override
             public <T extends GameRules.Rule<T>> void visit(GameRules.Key<T> key, GameRules.Type<T> type) {
-                CarpetRule<?> carpetRule = settingsManager.getCarpetRule(key.getName());
+                allGameRules.add(key.getName());
+                ParsedRule<?> carpetRule = settingsManager.getRule(key.getName());
                 if (carpetRule == null) {
                     LOGGER.warn("No associated carpet rule found for `" + key.getName() + "`, skipping");
                     return;
                 }
-                boolean isNonDefaultInConfig =
-                        !RuleHelper.toRuleString(carpetRule.value()).equals(gameruleDefaults.get(key.getName()));
+                boolean isNonDefaultInConfig = !carpetRule.getAsString().equals(gameruleDefaults.get(key.getName()));
 
                 if (isNonDefaultInConfig) {
                     updateGameruleValue(carpetRule, key, server);
                 } else {
-                    try {
-                        carpetRule.set(
-                                server.getCommandSource(),
-                                server.getGameRules().get(key).toString());
-                    } catch (InvalidRuleValueException e) {
-                        throw new RuntimeException(e);
-                    }
+                    carpetRule.set(
+                            server.getCommandSource(),
+                            server.getGameRules().get(key).toString());
                 }
 
-                LOGGER.info("Read gamerule " + key.getName() + " with value "
-                        + RuleHelper.toRuleString(carpetRule.value()));
+                LOGGER.info("Read gamerule " + key.getName() + " with value " + carpetRule.getAsString());
 
-                settingsManager.registerRuleObserver((source, rule, s) -> {
-                    if (rule.name().equals(key.getName())) {
+                settingsManager.addRuleObserver((source, rule, s) -> {
+                    if (rule.name.equals(key.getName())) {
                         if (ruleChangeIsFromGameruleCommand) {
                             ruleChangeIsFromGameruleCommand = false;
                             return;
@@ -132,17 +106,24 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
                 });
             }
         });
+
+        for (Field f : CarpetGamerulesSettings.class.getDeclaredFields()) {
+            if (f.getAnnotation(Rule.class) == null) continue;
+            if (!allGameRules.contains(f.getName())) {
+                LOGGER.error("No associated gamerule exists for carpet rule `" + f.getName() + "`");
+            }
+        }
     }
 
-    private void updateGameruleValue(CarpetRule<?> carpetRule, GameRules.Key<?> key, MinecraftServer server) {
-        if (carpetRule.type() == Boolean.class) {
+    private void updateGameruleValue(ParsedRule<?> carpetRule, GameRules.Key<?> key, MinecraftServer server) {
+        if (carpetRule.type == boolean.class) {
             GameRules.BooleanRule gamerule =
                     (GameRules.BooleanRule) server.getGameRules().get(key);
-            gamerule.set(RuleHelper.getBooleanValue(carpetRule), server);
+            gamerule.set(carpetRule.getBoolValue(), server);
         } else {
             GameRules.IntRule gamerule =
                     (GameRules.IntRule) server.getGameRules().get(key);
-            gamerule.set((Integer) carpetRule.value(), server);
+            gamerule.set((Integer) carpetRule.get(), server);
         }
     }
 }
