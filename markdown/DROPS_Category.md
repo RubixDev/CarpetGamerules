@@ -2,24 +2,12 @@
 
 For a list of all implemented Rules go [here](../README.md)
 ## Index
-Count: 6
-- [blockExplosionDropDecay](#blockexplosiondropdecay)
+Count: 3
 - [doEntityDrops](#doentitydrops)
 - [doMobLoot](#domobloot)
 - [doTileDrops](#dotiledrops)
-- [mobExplosionDropDecay](#mobexplosiondropdecay)
-- [tntExplosionDropDecay](#tntexplosiondropdecay)
 
 ## Rules in DROPS Category
-
-### blockExplosionDropDecay
-In block interaction explosions, some blocks won't drop their loot
-
-Some of the drops from blocks destroyed by explosions caused by block interactions are lost in the explosion.
-- Type: `boolean`
-- Default value: `true`
-- Required options: `true`, `false`
-- Categories: `DROPS`, `GAMERULE`
 
 ### doEntityDrops
 Drop entity equipment
@@ -45,23 +33,5 @@ Drop blocks
 Controls resource drops from blocks, including experience orbs
 - Type: `boolean`
 - Default value: `true`
-- Required options: `true`, `false`
-- Categories: `DROPS`, `GAMERULE`
-
-### mobExplosionDropDecay
-In mob explosions, some blocks won't drop their loot
-
-Some of the drops from blocks destroyed by explosions caused by mobs are lost in the explosion.
-- Type: `boolean`
-- Default value: `true`
-- Required options: `true`, `false`
-- Categories: `DROPS`, `GAMERULE`
-
-### tntExplosionDropDecay
-In TNT explosions, some blocks won't drop their loot
-
-Some of the drops from blocks destroyed by explosions caused by TNT are lost in the explosion.
-- Type: `boolean`
-- Default value: `false`
 - Required options: `true`, `false`
 - Categories: `DROPS`, `GAMERULE`

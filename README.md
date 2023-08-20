@@ -20,7 +20,6 @@ An extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet
 [![Rug](https://github-readme-stats.vercel.app/api/pin/?username=RubixDev&repo=Rug&theme=dracula&show_owner=true)](https://github.com/RubixDev/Rug)
 
 [![carpet-config-creator](https://github-readme-stats.vercel.app/api/pin/?username=RubixDev&repo=carpet-config-creator&theme=dracula&show_owner=true)](https://github.com/RubixDev/carpet-config-creator)
-
 ## Lists of Categories
 - [`CHAT`](markdown/CHAT_Category.md)
 - [`DROPS`](markdown/DROPS_Category.md)
@@ -31,11 +30,9 @@ An extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet
 - [`WORLD_UPDATES`](markdown/WORLD_UPDATES_Category.md)
 
 ## Index
-Count: 45
+Count: 35
 - [announceAdvancements](#announceadvancements)
-- [blockExplosionDropDecay](#blockexplosiondropdecay)
 - [commandBlockOutput](#commandblockoutput)
-- [commandModificationBlockLimit](#commandmodificationblocklimit)
 - [disableElytraMovementCheck](#disableelytramovementcheck)
 - [disableRaids](#disableraids)
 - [doDaylightCycle](#dodaylightcycle)
@@ -49,21 +46,16 @@ Count: 45
 - [doPatrolSpawning](#dopatrolspawning)
 - [doTileDrops](#dotiledrops)
 - [doTraderSpawning](#dotraderspawning)
-- [doVinesSpread](#dovinesspread)
-- [doWardenSpawning](#dowardenspawning)
 - [doWeatherCycle](#doweathercycle)
 - [drowningDamage](#drowningdamage)
 - [fallDamage](#falldamage)
 - [fireDamage](#firedamage)
 - [forgiveDeadPlayers](#forgivedeadplayers)
 - [freezeDamage](#freezedamage)
-- [globalSoundEvents](#globalsoundevents)
 - [keepInventory](#keepinventory)
-- [lavaSourceConversion](#lavasourceconversion)
 - [logAdminCommands](#logadmincommands)
 - [maxCommandChainLength](#maxcommandchainlength)
 - [maxEntityCramming](#maxentitycramming)
-- [mobExplosionDropDecay](#mobexplosiondropdecay)
 - [mobGriefing](#mobgriefing)
 - [naturalRegeneration](#naturalregeneration)
 - [playersSleepingPercentage](#playerssleepingpercentage)
@@ -71,12 +63,9 @@ Count: 45
 - [reducedDebugInfo](#reduceddebuginfo)
 - [sendCommandFeedback](#sendcommandfeedback)
 - [showDeathMessages](#showdeathmessages)
-- [snowAccumulationHeight](#snowaccumulationheight)
 - [spawnRadius](#spawnradius)
 - [spectatorsGenerateChunks](#spectatorsgeneratechunks)
-- [tntExplosionDropDecay](#tntexplosiondropdecay)
 - [universalAnger](#universalanger)
-- [waterSourceConversion](#watersourceconversion)
 
 ## Implemented Rules
 
@@ -89,15 +78,6 @@ Whether advancements should be announced in chat
 - Required options: `true`, `false`
 - Categories: `CHAT`, `GAMERULE`
 
-### blockExplosionDropDecay
-In block interaction explosions, some blocks won't drop their loot
-
-Some of the drops from blocks destroyed by explosions caused by block interactions are lost in the explosion.
-- Type: `boolean`
-- Default value: `true`
-- Required options: `true`, `false`
-- Categories: `DROPS`, `GAMERULE`
-
 ### commandBlockOutput
 Broadcast command block output
 
@@ -106,15 +86,6 @@ Whether command blocks should notify admins when they perform commands
 - Default value: `true`
 - Required options: `true`, `false`
 - Categories: `CHAT`, `GAMERULE`
-
-### commandModificationBlockLimit
-Command Modification Block Limit
-
-Number of blocks that can be changed at once by one command, such as fill or clone.
-- Type: `int`
-- Default value: `32768`
-- Suggested options: `32768`, `1000000`, `2147483647`
-- Categories: `GAMERULE`, `MISC`
 
 ### disableElytraMovementCheck
 Disable elytra movement check
@@ -233,24 +204,6 @@ Whether wandering traders can spawn
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `SPAWNING`
 
-### doVinesSpread
-Vines spread
-
-Controls whether or not the Vines block spreads randomly to adjacent blocks. Does not affect other type of vine blocks such as Weeping Vines, Twisting Vines, etc.
-- Type: `boolean`
-- Default value: `true`
-- Required options: `true`, `false`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
-
-### doWardenSpawning
-Spawn wardens
-
-Whether wardens can spawn
-- Type: `boolean`
-- Default value: `true`
-- Required options: `true`, `false`
-- Categories: `GAMERULE`, `SPAWNING`
-
 ### doWeatherCycle
 Update weather
 
@@ -305,15 +258,6 @@ Whether the player should take damage when inside powder snow
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `PLAYER`
 
-### globalSoundEvents
-Global sound events
-
-When certain game events happen, like a boss spawning, the sound is heard everywhere.
-- Type: `boolean`
-- Default value: `true`
-- Required options: `true`, `false`
-- Categories: `GAMERULE`, `MISC`
-
 ### keepInventory
 Keep inventory after death
 
@@ -322,15 +266,6 @@ Whether the player should keep items and experience in their inventory after dea
 - Default value: `false`
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `PLAYER`
-
-### lavaSourceConversion
-Lava converts to source
-
-When flowing lava is surrounded on two sides by lava sources it converts into a source.
-- Type: `boolean`
-- Default value: `false`
-- Required options: `true`, `false`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
 
 ### logAdminCommands
 Broadcast admin commands
@@ -360,15 +295,6 @@ Damage affects survival-mode or adventure-mode players, and all mobs but bats. P
 - Default value: `24`
 - Suggested options: `0`, `12`, `24`, `100`
 - Categories: `GAMERULE`, `MOBS`
-
-### mobExplosionDropDecay
-In mob explosions, some blocks won't drop their loot
-
-Some of the drops from blocks destroyed by explosions caused by mobs are lost in the explosion.
-- Type: `boolean`
-- Default value: `true`
-- Required options: `true`, `false`
-- Categories: `DROPS`, `GAMERULE`
 
 ### mobGriefing
 Allow destructive mob actions
@@ -440,15 +366,6 @@ Also affects whether a message is sent to the pet's owner when the pet dies
 - Required options: `true`, `false`
 - Categories: `CHAT`, `GAMERULE`
 
-### snowAccumulationHeight
-Snow accumulation height
-
-When it snows, layers of snow form on the ground up to at most this number of layers.
-- Type: `int`
-- Default value: `1`
-- Suggested options: `0`, `1`, `8`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
-
 ### spawnRadius
 Respawn location radius
 
@@ -467,15 +384,6 @@ Whether players in spectator mode can generate chunks
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `PLAYER`
 
-### tntExplosionDropDecay
-In TNT explosions, some blocks won't drop their loot
-
-Some of the drops from blocks destroyed by explosions caused by TNT are lost in the explosion.
-- Type: `boolean`
-- Default value: `false`
-- Required options: `true`, `false`
-- Categories: `DROPS`, `GAMERULE`
-
 ### universalAnger
 Universal anger
 
@@ -484,12 +392,3 @@ Angered neutral mobs attack any nearby player, not just the player that angered 
 - Default value: `false`
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `MOBS`
-
-### waterSourceConversion
-Water converts to source
-
-When flowing water is surrounded on two sides by water sources it converts into a source.
-- Type: `boolean`
-- Default value: `true`
-- Required options: `true`, `false`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
