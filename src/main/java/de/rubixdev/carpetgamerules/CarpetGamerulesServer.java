@@ -5,6 +5,8 @@ import carpet.CarpetServer;
 import carpet.settings.ParsedRule;
 import carpet.settings.Rule;
 import carpet.settings.SettingsManager;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.context.ParsedArgument;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -14,6 +16,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.world.GameRules;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -123,7 +126,19 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
         } else {
             GameRules.IntRule gamerule =
                     (GameRules.IntRule) server.getGameRules().get(key);
-            gamerule.set((Integer) carpetRule.get(), server);
+            // the only public `set` method takes a command context, so we spoof one with just the relevant information
+            CommandContext<ServerCommandSource> context = new CommandContext<>(
+                    server.getCommandSource(),
+                    "",
+                    Map.of("value", new ParsedArgument<>(0, 0, (Integer) carpetRule.get())),
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    false);
+            gamerule.set(context, "value");
         }
     }
 }

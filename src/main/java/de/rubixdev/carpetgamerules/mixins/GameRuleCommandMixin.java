@@ -20,6 +20,10 @@ public class GameRuleCommandMixin {
                 .getRule(key.getName())
                 .set(
                         context.getSource(),
-                        context.getSource().getServer().getGameRules().get(key).toString());
+                        context.getSource()
+                                .getMinecraftServer()
+                                .getGameRules()
+                                .get(key)
+                                .toString());
     }
 }

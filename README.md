@@ -30,7 +30,7 @@ An extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet
 - [`WORLD_UPDATES`](markdown/WORLD_UPDATES_Category.md)
 
 ## Index
-Count: 35
+Count: 33
 - [announceAdvancements](#announceadvancements)
 - [commandBlockOutput](#commandblockoutput)
 - [disableElytraMovementCheck](#disableelytramovementcheck)
@@ -51,14 +51,12 @@ Count: 35
 - [fallDamage](#falldamage)
 - [fireDamage](#firedamage)
 - [forgiveDeadPlayers](#forgivedeadplayers)
-- [freezeDamage](#freezedamage)
 - [keepInventory](#keepinventory)
 - [logAdminCommands](#logadmincommands)
 - [maxCommandChainLength](#maxcommandchainlength)
 - [maxEntityCramming](#maxentitycramming)
 - [mobGriefing](#mobgriefing)
 - [naturalRegeneration](#naturalregeneration)
-- [playersSleepingPercentage](#playerssleepingpercentage)
 - [randomTickSpeed](#randomtickspeed)
 - [reducedDebugInfo](#reduceddebuginfo)
 - [sendCommandFeedback](#sendcommandfeedback)
@@ -249,15 +247,6 @@ Angered neutral mobs stop being angry when the targeted player dies nearby
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `MOBS`
 
-### freezeDamage
-Deal freeze damage
-
-Whether the player should take damage when inside powder snow
-- Type: `boolean`
-- Default value: `true`
-- Required options: `true`, `false`
-- Categories: `GAMERULE`, `PLAYER`
-
 ### keepInventory
 Keep inventory after death
 
@@ -314,15 +303,6 @@ Doesn't affect external healing, such as golden apples, the Regeneration effect,
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`
-- Categories: `GAMERULE`, `PLAYER`
-
-### playersSleepingPercentage
-Sleep percentage
-
-The percentage of players who must be sleeping to skip the night
-- Type: `int`
-- Default value: `100`
-- Suggested options: `0`, `25`, `50`, `75`, `100`
 - Categories: `GAMERULE`, `PLAYER`
 
 ### randomTickSpeed

@@ -2,17 +2,15 @@
 
 For a list of all implemented Rules go [here](../README.md)
 ## Index
-Count: 12
+Count: 10
 - [disableElytraMovementCheck](#disableelytramovementcheck)
 - [doImmediateRespawn](#doimmediaterespawn)
 - [doLimitedCrafting](#dolimitedcrafting)
 - [drowningDamage](#drowningdamage)
 - [fallDamage](#falldamage)
 - [fireDamage](#firedamage)
-- [freezeDamage](#freezedamage)
 - [keepInventory](#keepinventory)
 - [naturalRegeneration](#naturalregeneration)
-- [playersSleepingPercentage](#playerssleepingpercentage)
 - [spawnRadius](#spawnradius)
 - [spectatorsGenerateChunks](#spectatorsgeneratechunks)
 
@@ -72,15 +70,6 @@ Whether the player should take damage in fire, lava, campfires, or on magma bloc
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `PLAYER`
 
-### freezeDamage
-Deal freeze damage
-
-Whether the player should take damage when inside powder snow
-- Type: `boolean`
-- Default value: `true`
-- Required options: `true`, `false`
-- Categories: `GAMERULE`, `PLAYER`
-
 ### keepInventory
 Keep inventory after death
 
@@ -98,15 +87,6 @@ Doesn't affect external healing, such as golden apples, the Regeneration effect,
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`
-- Categories: `GAMERULE`, `PLAYER`
-
-### playersSleepingPercentage
-Sleep percentage
-
-The percentage of players who must be sleeping to skip the night
-- Type: `int`
-- Default value: `100`
-- Suggested options: `0`, `25`, `50`, `75`, `100`
 - Categories: `GAMERULE`, `PLAYER`
 
 ### spawnRadius

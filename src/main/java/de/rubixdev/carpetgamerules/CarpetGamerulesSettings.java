@@ -134,12 +134,6 @@ public class CarpetGamerulesSettings {
     public static boolean forgiveDeadPlayers = true;
 
     @Rule(
-            desc = "Deal freeze damage",
-            extra = "Whether the player should take damage when inside powder snow",
-            category = {GAMERULE, PLAYER})
-    public static boolean freezeDamage = true;
-
-    @Rule(
             desc = "Keep inventory after death",
             extra = "Whether the player should keep items and experience in their inventory after death",
             category = {GAMERULE, PLAYER})
@@ -189,14 +183,6 @@ public class CarpetGamerulesSettings {
             },
             category = {GAMERULE, PLAYER})
     public static boolean naturalRegeneration = true;
-
-    @Rule(
-            desc = "Sleep percentage",
-            extra = "The percentage of players who must be sleeping to skip the night",
-            category = {GAMERULE, PLAYER},
-            strict = false,
-            options = {"0", "25", "50", "75", "100"})
-    public static int playersSleepingPercentage = 100;
 
     @Rule(
             desc = "Random tick speed rate",

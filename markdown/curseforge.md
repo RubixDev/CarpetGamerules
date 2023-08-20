@@ -5,7 +5,7 @@ Extension Mod for [gnembon's Carpet Mod](https://www.curseforge.com/minecraft/mc
 **Visit the [GitHub page](https://github.com/RubixDev/CarpetGamerules) for a more detailed explanation.**
 
 ## List of Gamerules
-Count: 35  
+Count: 33  
 - announceAdvancements  
 - commandBlockOutput  
 - disableElytraMovementCheck  
@@ -26,14 +26,12 @@ Count: 35
 - fallDamage  
 - fireDamage  
 - forgiveDeadPlayers  
-- freezeDamage  
 - keepInventory  
 - logAdminCommands  
 - maxCommandChainLength  
 - maxEntityCramming  
 - mobGriefing  
 - naturalRegeneration  
-- playersSleepingPercentage  
 - randomTickSpeed  
 - reducedDebugInfo  
 - sendCommandFeedback  
