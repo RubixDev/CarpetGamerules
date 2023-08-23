@@ -1,8 +1,0 @@
-{
-    "carpetSettingsClass": "src/main/java/de/rubixdev/carpetgamerules/CarpetGamerulesSettings.java",
-    "languageFile": "src/main/resources/assets/carpetgamerules/lang/en_us.json",
-    "mainCategory": "GAMERULE",
-    "readmeHeader": "markdown/README-header.md",
-    "curseForgeHeader": "markdown/CurseForge-header.md",
-    "modrinthHeader": "markdown/Modrinth-header.md"
-}

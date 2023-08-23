@@ -2,9 +2,13 @@
   "required": true,
   "minVersion": "0.8",
   "package": "de.rubixdev.carpetgamerules.mixins",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "${compatibility_level}",
+  "plugin": "de.rubixdev.carpetgamerules.MixinConfigPlugin",
   "mixins": [
-    "GameRuleCommandMixin"
+    "GameRuleCommandMixin",
+    "MinecraftServerMixin",
+    "ParsedRuleMixin",
+    "SettingsManagerAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
