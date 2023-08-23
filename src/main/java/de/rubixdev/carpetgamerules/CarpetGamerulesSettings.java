@@ -128,12 +128,6 @@ public class CarpetGamerulesSettings {
     public static boolean fireDamage = true;
 
     @Rule(
-            desc = "Forgive dead players",
-            extra = "Angered neutral mobs stop being angry when the targeted player dies nearby",
-            category = {GAMERULE, MOBS})
-    public static boolean forgiveDeadPlayers = true;
-
-    @Rule(
             desc = "Keep inventory after death",
             extra = "Whether the player should keep items and experience in their inventory after death",
             category = {GAMERULE, PLAYER})
@@ -235,13 +229,6 @@ public class CarpetGamerulesSettings {
             extra = "Whether players in spectator mode can generate chunks",
             category = {GAMERULE, PLAYER})
     public static boolean spectatorsGenerateChunks = true;
-
-    @Rule(
-            desc = "Universal anger",
-            extra =
-                    "Angered neutral mobs attack any nearby player, not just the player that angered them. Works best if `forgiveDeadPlayers` is disabled",
-            category = {GAMERULE, MOBS})
-    public static boolean universalAnger = false;
 }
 
 // BUGFIX

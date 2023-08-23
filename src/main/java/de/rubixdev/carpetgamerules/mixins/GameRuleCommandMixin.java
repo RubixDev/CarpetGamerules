@@ -14,7 +14,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class GameRuleCommandMixin {
     @Inject(method = "executeSet", at = @At("RETURN"))
     private static <T extends GameRules.Rule<T>> void updateCarpetSetting(
-            CommandContext<ServerCommandSource> context, GameRules.Key<T> key, CallbackInfoReturnable<Integer> cir) {
+            CommandContext<ServerCommandSource> context,
+            GameRules.RuleKey<T> key,
+            CallbackInfoReturnable<Integer> cir) {
         CarpetGamerulesServer.ruleChangeIsFromGameruleCommand = true;
         CarpetGamerulesServer.settingsManager
                 .getRule(key.getName())

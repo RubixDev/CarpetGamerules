@@ -77,9 +77,9 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
     public void onServerLoadedWorlds(MinecraftServer server) {
         Set<String> allGameRules = new HashSet<>();
 
-        GameRules.accept(new GameRules.Visitor() {
+        GameRules.forEachType(new GameRules.RuleTypeConsumer() {
             @Override
-            public <T extends GameRules.Rule<T>> void visit(GameRules.Key<T> key, GameRules.Type<T> type) {
+            public <T extends GameRules.Rule<T>> void accept(GameRules.RuleKey<T> key, GameRules.RuleType<T> type) {
                 allGameRules.add(key.getName());
                 ParsedRule<?> carpetRule = settingsManager.getRule(key.getName());
                 if (carpetRule == null) {
@@ -118,7 +118,7 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
         }
     }
 
-    private void updateGameruleValue(ParsedRule<?> carpetRule, GameRules.Key<?> key, MinecraftServer server) {
+    private void updateGameruleValue(ParsedRule<?> carpetRule, GameRules.RuleKey<?> key, MinecraftServer server) {
         if (carpetRule.type == boolean.class) {
             GameRules.BooleanRule gamerule =
                     (GameRules.BooleanRule) server.getGameRules().get(key);
@@ -127,17 +127,10 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
             GameRules.IntRule gamerule =
                     (GameRules.IntRule) server.getGameRules().get(key);
             // the only public `set` method takes a command context, so we spoof one with just the relevant information
-            CommandContext<ServerCommandSource> context = new CommandContext<>(
-                    server.getCommandSource(),
-                    "",
-                    Map.of("value", new ParsedArgument<>(0, 0, (Integer) carpetRule.get())),
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    false);
+            Map<String, ParsedArgument<ServerCommandSource, ?>> map = new HashMap<>();
+            map.put("value", new ParsedArgument<>(0, 0, (Integer) carpetRule.get()));
+            CommandContext<ServerCommandSource> context =
+                    new CommandContext<>(server.getCommandSource(), "", map, null, null, null, null, null, null, false);
             gamerule.set(context, "value");
         }
     }

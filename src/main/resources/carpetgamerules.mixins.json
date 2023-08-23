@@ -4,7 +4,9 @@
   "package": "de.rubixdev.carpetgamerules.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "GameRuleCommandMixin"
+    "GameRuleCommandMixin",
+    "ParsedRuleMixin",
+    "SettingsManagerAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
