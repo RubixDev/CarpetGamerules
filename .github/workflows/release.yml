@@ -158,7 +158,7 @@ jobs:
         with:
           # https://modrinth.com/settings/pats
           modrinth-id: BZjbriEM
-          modrinth-token: ${{ secrets.MODRINTH_API_TOKEN }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
 
           # https://legacy.curseforge.com/account/api-tokens
           curseforge-id: 504123
