@@ -220,6 +220,11 @@ public class CarpetGamerulesSettings {
     public static boolean drowningDamage = true;
     //#endif
 
+    //#if MC >= 12002
+    @Rule(categories = {GAMERULE, PLAYER})
+    public static boolean enderPearlsVanishOnDeath = true;
+    //#endif
+
     //#if MC >= 11500
     //#if MC >= 11901
     @Rule(categories = {GAMERULE, PLAYER})
@@ -314,6 +319,11 @@ public class CarpetGamerulesSettings {
     //#endif
     public static int maxCommandChainLength = 65536;
 
+    //#if MC >= 12004
+    @Rule(categories = {GAMERULE, MISC})
+    public static int maxCommandForkCount = 65536;
+    //#endif
+
     //#if MC >= 11901
     @Rule(
             categories = {GAMERULE, MOBS},
@@ -364,6 +374,16 @@ public class CarpetGamerulesSettings {
     //#endif
     public static boolean naturalRegeneration = true;
 
+    //#if MC >= 12004
+    @Rule(categories = {GAMERULE, PLAYER})
+    public static int playersNetherPortalCreativeDelay = 1;
+    //#endif
+
+    //#if MC >= 12004
+    @Rule(categories = {GAMERULE, PLAYER})
+    public static int playersNetherPortalDefaultDelay = 80;
+    //#endif
+
     //#if MC >= 11700
     //#if MC >= 11901
     @Rule(
@@ -379,6 +399,11 @@ public class CarpetGamerulesSettings {
     //$$         options = {"0", "25", "50", "75", "100"})
     //#endif
     public static int playersSleepingPercentage = 100;
+    //#endif
+
+    //#if MC >= 12004
+    @Rule(categories = {GAMERULE, DROPS})
+    public static boolean projectilesCanBreakBlocks = true;
     //#endif
 
     //#if MC >= 11901

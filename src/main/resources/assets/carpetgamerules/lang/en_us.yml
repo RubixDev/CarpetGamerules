@@ -84,6 +84,10 @@ carpetgamerules:
       desc: Deal drowning damage
       extra:
         '0': Whether the player should take damage when drowning
+    enderPearlsVanishOnDeath:
+      desc: Thrown ender pearls vanish on death
+      extra:
+        '0': Whether ender pearls thrown by a player vanish when that player dies
     fallDamage:
       desc: Deal fall damage
       extra:
@@ -120,6 +124,10 @@ carpetgamerules:
       desc: Command chain size limit
       extra:
         '0': The maximum length of a chain of commands that can be executed during one tick. Applies to command blocks and functions
+    maxCommandForkCount:
+      desc: Command context limit
+      extra:
+        '0': Maximum number of contexts that can be used by commands like 'execute as'
     maxEntityCramming:
       desc: Entity cramming threshold
       extra:
@@ -140,10 +148,22 @@ carpetgamerules:
       extra:
         '0': Whether the player can regenerate health naturally if their hunger is full enough
         '1': Doesn't affect external healing, such as golden apples, the Regeneration effect, etc.
+    playersNetherPortalCreativeDelay:
+      desc: Player's Nether portal delay in creative mode
+      extra:
+        '0': Time (in ticks) that a creative mode player needs to stand in a Nether portal before changing dimensions
+    playersNetherPortalDefaultDelay:
+      desc: Player's Nether portal delay in non-creative mode
+      extra:
+        '0': Time (in ticks) that a non-creative mode player needs to stand in a Nether portal before changing dimensions
     playersSleepingPercentage:
       desc: Sleep percentage
       extra:
         '0': The percentage of players who must be sleeping to skip the night
+    projectilesCanBreakBlocks:
+      desc: Projectiles can break blocks
+      extra:
+        '0': Controls whether impact projectiles will destroy blocks that are destructible by them
     randomTickSpeed:
       desc: Random tick speed rate
       extra:
