@@ -41,7 +41,7 @@ Whether to log admin commands to server log
 ### sendCommandFeedback
 Send command feedback
 
-Whether the feedback from commands executed by a player should show up in chat\
+Whether the feedback from commands executed by a player should show up in chat  
 Also affects the default behavior of whether command blocks store their output text
 - Type: `boolean`
 - Default value: `true`
@@ -51,7 +51,7 @@ Also affects the default behavior of whether command blocks store their output t
 ### showDeathMessages
 Show death messages
 
-Whether death messages are put into chat when a player dies\
+Whether death messages are put into chat when a player dies  
 Also affects whether a message is sent to the pet's owner when the pet dies
 - Type: `boolean`
 - Default value: `true`

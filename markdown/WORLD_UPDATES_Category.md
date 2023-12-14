@@ -62,9 +62,9 @@ When flowing lava is surrounded on two sides by lava sources it converts into a 
 ### randomTickSpeed
 Random tick speed rate
 
-How often a random block tick occurs (such as plant growth, leaf decay, etc.) per chunk section per game tick\
-0 and negative values disables random ticks, higher numbers increase random ticks\
-Setting to a high integer results in high speeds of decay and growth\
+How often a random block tick occurs (such as plant growth, leaf decay, etc.) per chunk section per game tick  
+0 and negative values disables random ticks, higher numbers increase random ticks  
+Setting to a high integer results in high speeds of decay and growth  
 Numbers over 4096 make plant growth or leaf decay instantaneous
 - Type: `int`
 - Default value: `3`

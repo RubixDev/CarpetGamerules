@@ -2,12 +2,13 @@
 
 For a list of all implemented Rules go [here](../README.md)
 ## Index
-Count: 6
+Count: 7
 - [blockExplosionDropDecay](#blockexplosiondropdecay)
 - [doEntityDrops](#doentitydrops)
 - [doMobLoot](#domobloot)
 - [doTileDrops](#dotiledrops)
 - [mobExplosionDropDecay](#mobexplosiondropdecay)
+- [projectilesCanBreakBlocks](#projectilescanbreakblocks)
 - [tntExplosionDropDecay](#tntexplosiondropdecay)
 
 ## Rules in DROPS Category
@@ -52,6 +53,15 @@ Controls resource drops from blocks, including experience orbs
 In mob explosions, some blocks won't drop their loot
 
 Some of the drops from blocks destroyed by explosions caused by mobs are lost in the explosion.
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
+- Categories: `DROPS`, `GAMERULE`
+
+### projectilesCanBreakBlocks
+Projectiles can break blocks
+
+Controls whether impact projectiles will destroy blocks that are destructible by them
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`

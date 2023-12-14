@@ -5,7 +5,7 @@ Extension Mod for [gnembon's Carpet Mod](https://www.curseforge.com/minecraft/mc
 **Visit the [GitHub page](https://github.com/RubixDev/CarpetGamerules) for a more detailed explanation.**
 
 ## List of Gamerules
-Count: 45  
+Count: 50  
 - announceAdvancements  
 - blockExplosionDropDecay  
 - commandBlockOutput  
@@ -27,6 +27,7 @@ Count: 45
 - doWardenSpawning  
 - doWeatherCycle  
 - drowningDamage  
+- enderPearlsVanishOnDeath  
 - fallDamage  
 - fireDamage  
 - forgiveDeadPlayers  
@@ -36,11 +37,15 @@ Count: 45
 - lavaSourceConversion  
 - logAdminCommands  
 - maxCommandChainLength  
+- maxCommandForkCount  
 - maxEntityCramming  
 - mobExplosionDropDecay  
 - mobGriefing  
 - naturalRegeneration  
+- playersNetherPortalCreativeDelay  
+- playersNetherPortalDefaultDelay  
 - playersSleepingPercentage  
+- projectilesCanBreakBlocks  
 - randomTickSpeed  
 - reducedDebugInfo  
 - sendCommandFeedback  

@@ -2,10 +2,11 @@
 
 For a list of all implemented Rules go [here](../README.md)
 ## Index
-Count: 4
+Count: 5
 - [commandModificationBlockLimit](#commandmodificationblocklimit)
 - [globalSoundEvents](#globalsoundevents)
 - [maxCommandChainLength](#maxcommandchainlength)
+- [maxCommandForkCount](#maxcommandforkcount)
 - [reducedDebugInfo](#reduceddebuginfo)
 
 ## Rules in MISC Category
@@ -35,6 +36,15 @@ The maximum length of a chain of commands that can be executed during one tick. 
 - Type: `int`
 - Default value: `65536`
 - Suggested options: `65536`
+- Categories: `GAMERULE`, `MISC`
+
+### maxCommandForkCount
+Command context limit
+
+Maximum number of contexts that can be used by commands like 'execute as'
+- Type: `int`
+- Default value: `65536`
+- Required options: ``
 - Categories: `GAMERULE`, `MISC`
 
 ### reducedDebugInfo

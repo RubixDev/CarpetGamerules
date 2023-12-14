@@ -2,16 +2,19 @@
 
 For a list of all implemented Rules go [here](../README.md)
 ## Index
-Count: 12
+Count: 15
 - [disableElytraMovementCheck](#disableelytramovementcheck)
 - [doImmediateRespawn](#doimmediaterespawn)
 - [doLimitedCrafting](#dolimitedcrafting)
 - [drowningDamage](#drowningdamage)
+- [enderPearlsVanishOnDeath](#enderpearlsvanishondeath)
 - [fallDamage](#falldamage)
 - [fireDamage](#firedamage)
 - [freezeDamage](#freezedamage)
 - [keepInventory](#keepinventory)
 - [naturalRegeneration](#naturalregeneration)
+- [playersNetherPortalCreativeDelay](#playersnetherportalcreativedelay)
+- [playersNetherPortalDefaultDelay](#playersnetherportaldefaultdelay)
 - [playersSleepingPercentage](#playerssleepingpercentage)
 - [spawnRadius](#spawnradius)
 - [spectatorsGenerateChunks](#spectatorsgeneratechunks)
@@ -49,6 +52,15 @@ If enabled, players will be able to craft only unlocked recipes
 Deal drowning damage
 
 Whether the player should take damage when drowning
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
+- Categories: `GAMERULE`, `PLAYER`
+
+### enderPearlsVanishOnDeath
+Thrown ender pearls vanish on death
+
+Whether ender pearls thrown by a player vanish when that player dies
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`
@@ -93,11 +105,29 @@ Whether the player should keep items and experience in their inventory after dea
 ### naturalRegeneration
 Regenerate health
 
-Whether the player can regenerate health naturally if their hunger is full enough\
+Whether the player can regenerate health naturally if their hunger is full enough  
 Doesn't affect external healing, such as golden apples, the Regeneration effect, etc.
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`
+- Categories: `GAMERULE`, `PLAYER`
+
+### playersNetherPortalCreativeDelay
+Player's Nether portal delay in creative mode
+
+Time (in ticks) that a creative mode player needs to stand in a Nether portal before changing dimensions
+- Type: `int`
+- Default value: `1`
+- Required options: ``
+- Categories: `GAMERULE`, `PLAYER`
+
+### playersNetherPortalDefaultDelay
+Player's Nether portal delay in non-creative mode
+
+Time (in ticks) that a non-creative mode player needs to stand in a Nether portal before changing dimensions
+- Type: `int`
+- Default value: `80`
+- Required options: ``
 - Categories: `GAMERULE`, `PLAYER`
 
 ### playersSleepingPercentage

@@ -31,7 +31,7 @@ An extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet
 - [`WORLD_UPDATES`](markdown/WORLD_UPDATES_Category.md)
 
 ## Index
-Count: 45
+Count: 50
 - [announceAdvancements](#announceadvancements)
 - [blockExplosionDropDecay](#blockexplosiondropdecay)
 - [commandBlockOutput](#commandblockoutput)
@@ -53,6 +53,7 @@ Count: 45
 - [doWardenSpawning](#dowardenspawning)
 - [doWeatherCycle](#doweathercycle)
 - [drowningDamage](#drowningdamage)
+- [enderPearlsVanishOnDeath](#enderpearlsvanishondeath)
 - [fallDamage](#falldamage)
 - [fireDamage](#firedamage)
 - [forgiveDeadPlayers](#forgivedeadplayers)
@@ -62,11 +63,15 @@ Count: 45
 - [lavaSourceConversion](#lavasourceconversion)
 - [logAdminCommands](#logadmincommands)
 - [maxCommandChainLength](#maxcommandchainlength)
+- [maxCommandForkCount](#maxcommandforkcount)
 - [maxEntityCramming](#maxentitycramming)
 - [mobExplosionDropDecay](#mobexplosiondropdecay)
 - [mobGriefing](#mobgriefing)
 - [naturalRegeneration](#naturalregeneration)
+- [playersNetherPortalCreativeDelay](#playersnetherportalcreativedelay)
+- [playersNetherPortalDefaultDelay](#playersnetherportaldefaultdelay)
 - [playersSleepingPercentage](#playerssleepingpercentage)
+- [projectilesCanBreakBlocks](#projectilescanbreakblocks)
 - [randomTickSpeed](#randomtickspeed)
 - [reducedDebugInfo](#reduceddebuginfo)
 - [sendCommandFeedback](#sendcommandfeedback)
@@ -269,6 +274,15 @@ Whether the player should take damage when drowning
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `PLAYER`
 
+### enderPearlsVanishOnDeath
+Thrown ender pearls vanish on death
+
+Whether ender pearls thrown by a player vanish when that player dies
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
+- Categories: `GAMERULE`, `PLAYER`
+
 ### fallDamage
 Deal fall damage
 
@@ -350,11 +364,20 @@ The maximum length of a chain of commands that can be executed during one tick. 
 - Suggested options: `65536`
 - Categories: `GAMERULE`, `MISC`
 
+### maxCommandForkCount
+Command context limit
+
+Maximum number of contexts that can be used by commands like 'execute as'
+- Type: `int`
+- Default value: `65536`
+- Required options: ``
+- Categories: `GAMERULE`, `MISC`
+
 ### maxEntityCramming
 Entity cramming threshold
 
-The maximum number of pushable entities a mob or player can push, before taking 3 suffocation damage per half-second.\
-Setting to 0 or lower disables the rule.\
+The maximum number of pushable entities a mob or player can push, before taking 3 suffocation damage per half-second.  
+Setting to 0 or lower disables the rule.  
 Damage affects survival-mode or adventure-mode players, and all mobs but bats. Pushable entities include non-spectator-mode players, any mob except bats, as well as boats and minecarts.
 - Type: `int`
 - Default value: `24`
@@ -373,7 +396,7 @@ Some of the drops from blocks destroyed by explosions caused by mobs are lost in
 ### mobGriefing
 Allow destructive mob actions
 
-Whether creepers, zombies, endermen, ghasts, withers, ender dragons, rabbits, sheep, villagers, silverfish, snow golems, and end crystals should be able to change blocks and whether mobs can pick up items, which also disables bartering\
+Whether creepers, zombies, endermen, ghasts, withers, ender dragons, rabbits, sheep, villagers, silverfish, snow golems, and end crystals should be able to change blocks and whether mobs can pick up items, which also disables bartering  
 This also affects the capability of zombie-like creatures like zombified piglins and drowned to pathfind to turtle eggs
 - Type: `boolean`
 - Default value: `true`
@@ -383,11 +406,29 @@ This also affects the capability of zombie-like creatures like zombified piglins
 ### naturalRegeneration
 Regenerate health
 
-Whether the player can regenerate health naturally if their hunger is full enough\
+Whether the player can regenerate health naturally if their hunger is full enough  
 Doesn't affect external healing, such as golden apples, the Regeneration effect, etc.
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`
+- Categories: `GAMERULE`, `PLAYER`
+
+### playersNetherPortalCreativeDelay
+Player's Nether portal delay in creative mode
+
+Time (in ticks) that a creative mode player needs to stand in a Nether portal before changing dimensions
+- Type: `int`
+- Default value: `1`
+- Required options: ``
+- Categories: `GAMERULE`, `PLAYER`
+
+### playersNetherPortalDefaultDelay
+Player's Nether portal delay in non-creative mode
+
+Time (in ticks) that a non-creative mode player needs to stand in a Nether portal before changing dimensions
+- Type: `int`
+- Default value: `80`
+- Required options: ``
 - Categories: `GAMERULE`, `PLAYER`
 
 ### playersSleepingPercentage
@@ -399,12 +440,21 @@ The percentage of players who must be sleeping to skip the night
 - Suggested options: `0`, `25`, `50`, `75`, `100`
 - Categories: `GAMERULE`, `PLAYER`
 
+### projectilesCanBreakBlocks
+Projectiles can break blocks
+
+Controls whether impact projectiles will destroy blocks that are destructible by them
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
+- Categories: `DROPS`, `GAMERULE`
+
 ### randomTickSpeed
 Random tick speed rate
 
-How often a random block tick occurs (such as plant growth, leaf decay, etc.) per chunk section per game tick\
-0 and negative values disables random ticks, higher numbers increase random ticks\
-Setting to a high integer results in high speeds of decay and growth\
+How often a random block tick occurs (such as plant growth, leaf decay, etc.) per chunk section per game tick  
+0 and negative values disables random ticks, higher numbers increase random ticks  
+Setting to a high integer results in high speeds of decay and growth  
 Numbers over 4096 make plant growth or leaf decay instantaneous
 - Type: `int`
 - Default value: `3`
@@ -423,7 +473,7 @@ Limits contents of debug screen
 ### sendCommandFeedback
 Send command feedback
 
-Whether the feedback from commands executed by a player should show up in chat\
+Whether the feedback from commands executed by a player should show up in chat  
 Also affects the default behavior of whether command blocks store their output text
 - Type: `boolean`
 - Default value: `true`
@@ -433,7 +483,7 @@ Also affects the default behavior of whether command blocks store their output t
 ### showDeathMessages
 Show death messages
 
-Whether death messages are put into chat when a player dies\
+Whether death messages are put into chat when a player dies  
 Also affects whether a message is sent to the pet's owner when the pet dies
 - Type: `boolean`
 - Default value: `true`
