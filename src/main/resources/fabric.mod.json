@@ -29,7 +29,7 @@
 
   "depends": {
     "fabricloader": ">=${fabric_loader}",
-    "carpet": "${carpet_dependency}",
+    "carpet": ">=${carpet_dependency}",
     "minecraft": "${minecraft_dependency}"
   },
   "suggests": {
