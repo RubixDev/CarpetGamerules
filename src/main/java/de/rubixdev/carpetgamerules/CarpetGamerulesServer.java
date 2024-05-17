@@ -15,7 +15,6 @@ import org.apache.logging.log4j.Logger;
 //#if MC >= 11901
 import carpet.api.settings.*;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,8 +26,7 @@ import org.apache.commons.io.IOUtils;
 //$$ import carpet.settings.Rule;
 //#endif
 
-//#if MC >= 11700
-//#else
+//#if MC < 11700
 //$$ import com.mojang.brigadier.context.CommandContext;
 //$$ import com.mojang.brigadier.context.ParsedArgument;
 //$$ import net.minecraft.server.command.ServerCommandSource;
@@ -78,7 +76,7 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
 
     @Override
     public void onGameStarted() {
-        LOGGER.info(MOD_NAME + " v" + MOD_VERSION + " loaded!");
+        LOGGER.info("{} v{} loaded!", MOD_NAME, MOD_VERSION);
         settingsManager.parseSettingsClass(CarpetGamerulesSettings.class);
     }
 
@@ -131,7 +129,7 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
                 //$$ ParsedRule<?> carpetRule = settingsManager.getRule(key.getName());
                 //#endif
                 if (carpetRule == null) {
-                    LOGGER.warn("No associated carpet rule found for `" + key.getName() + "`, skipping");
+                    LOGGER.warn("No associated carpet rule found for `{}`, skipping", key.getName());
                     return;
                 }
                 //#if MC >= 11901
@@ -159,7 +157,7 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
                     //#endif
                 }
 
-                LOGGER.info("Read gamerule " + key.getName() + " with value " + stringValue);
+                LOGGER.info("Read gamerule {} with value {}", key.getName(), stringValue);
 
                 //#if MC >= 11901
                 settingsManager.registerRuleObserver((source, rule, s) -> {
@@ -181,7 +179,7 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
         for (Field f : CarpetGamerulesSettings.class.getDeclaredFields()) {
             if (f.getAnnotation(Rule.class) == null) continue;
             if (!allGamerules.contains(f.getName())) {
-                LOGGER.error("No associated gamerule exists for carpet rule `" + f.getName() + "`");
+                LOGGER.error("No associated gamerule exists for carpet rule `{}`", f.getName());
             }
         }
     }

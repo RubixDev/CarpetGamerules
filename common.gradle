@@ -6,9 +6,6 @@ apply plugin: 'me.fallenbreath.yamlang'
 int mcVersion = project.mcVersion
 
 repositories {
-	maven {
-		url 'https://jitpack.io'
-	}
     maven {
         url 'https://masa.dy.fi/maven'
     }
@@ -27,9 +24,6 @@ dependencies {
 
 	// dependencies
     modImplementation "carpet:fabric-carpet:${project.carpet_core_version}"
-
-	// library mods
-	include(modImplementation("com.github.Fallen-Breath:conditional-mixin:${project.conditionalmixin_version}"))
 }
 
 String MIXIN_CONFIG_PATH = 'carpetgamerules.mixins.json'
