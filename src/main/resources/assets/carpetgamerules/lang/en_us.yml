@@ -189,6 +189,10 @@ carpetgamerules:
       desc: Snow accumulation height
       extra:
         '0': When it snows, layers of snow form on the ground up to at most this number of layers.
+    spawnChunkRadius:
+      desc: Spawn chunk radius
+      extra:
+        '0': Amount of chunks that stay loaded around the overworld spawn position
     spawnRadius:
       desc: Respawn location radius
       extra:

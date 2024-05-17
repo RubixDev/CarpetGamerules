@@ -470,6 +470,14 @@ public class CarpetGamerulesSettings {
     public static int snowAccumulationHeight = 1;
     //#endif
 
+    //#if MC >= 12006
+    @Rule(
+            categories = {GAMERULE, MISC},
+            strict = false,
+            options = {"0", "2", "10", "32"})
+    public static int spawnChunkRadius = 2;
+    //#endif
+
     //#if MC >= 11901
     @Rule(
             categories = {GAMERULE, PLAYER},

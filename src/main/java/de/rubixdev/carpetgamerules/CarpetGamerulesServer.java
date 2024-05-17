@@ -12,6 +12,12 @@ import net.minecraft.world.GameRules;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+//#if MC >= 12006
+import net.minecraft.util.Language;
+import org.apache.commons.lang3.StringUtils;
+import java.util.stream.Collectors;
+//#endif
+
 //#if MC >= 11901
 import carpet.api.settings.*;
 import com.google.gson.Gson;
@@ -130,6 +136,62 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
                 //#endif
                 if (carpetRule == null) {
                     LOGGER.warn("No associated carpet rule found for `{}`, skipping", key.getName());
+                    // no need to backport this, the old versions already have all their rules.
+                    //#if MC >= 12006
+                    if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
+                        // print code snippets to make adding the rule easier
+                        GameRules.Rule<?> rule = server.getGameRules().get(key);
+                        // will be a string like 12006 for 1.20.6
+                        String mcVersion = StringUtils.removeStart(
+                                Arrays.stream(FabricLoader.getInstance()
+                                                .getModContainer("minecraft")
+                                                .orElseThrow()
+                                                .getMetadata()
+                                                .getVersion()
+                                                .getFriendlyString()
+                                                .split("\\."))
+                                        .map(s -> StringUtils.leftPad(s, 2, '0'))
+                                        .collect(Collectors.joining()),
+                                '0'
+                        );
+                        String categories = "categories = {GAMERULE, " + key.getCategory().toString() + "}";
+                        String annotation;
+                        String javaType;
+                        String defaultValue;
+                        if (rule instanceof GameRules.BooleanRule booleanRule) {
+                            annotation = "@Rule(" + categories + ")";
+                            javaType = "boolean";
+                            defaultValue = String.valueOf(booleanRule.get());
+                        } else if (rule instanceof GameRules.IntRule intRule) {
+                            annotation = "@Rule(\n        " + categories + ",\n        strict = false,\n        options = {\"" + intRule.get() + "\"})";
+                            javaType = "int";
+                            defaultValue = String.valueOf(intRule.get());
+                        } else {
+                            throw new RuntimeException("rule '" + key.getName() + "' is of unknown type");
+                        }
+                        LOGGER.warn(
+                                "\n//#if MC >= {}\n{}\npublic static {} {} = {};\n//#endif",
+                                mcVersion,
+                                annotation,
+                                javaType,
+                                key.getName(),
+                                defaultValue
+                        );
+
+                        String description = Language.getInstance().get("gamerule." + key.getName());
+                        String extra = "";
+                        String extraKey = "gamerule." + key.getName() + ".description";
+                        if (Language.getInstance().hasTranslation(extraKey)) {
+                            extra = "\n  extra:\n    '0': " + StringUtils.removeEnd(Language.getInstance().get(extraKey), ".");
+                        }
+                        LOGGER.warn(
+                                "\n{}:\n  desc: {}{}",
+                                key.getName(),
+                                description,
+                                extra
+                        );
+                    }
+                    //#endif
                     return;
                 }
                 //#if MC >= 11901
