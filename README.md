@@ -31,7 +31,7 @@ An extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet
 - [`WORLD_UPDATES`](markdown/WORLD_UPDATES_Category.md)
 
 ## Index
-Count: 50
+Count: 51
 - [announceAdvancements](#announceadvancements)
 - [blockExplosionDropDecay](#blockexplosiondropdecay)
 - [commandBlockOutput](#commandblockoutput)
@@ -77,6 +77,7 @@ Count: 50
 - [sendCommandFeedback](#sendcommandfeedback)
 - [showDeathMessages](#showdeathmessages)
 - [snowAccumulationHeight](#snowaccumulationheight)
+- [spawnChunkRadius](#spawnchunkradius)
 - [spawnRadius](#spawnradius)
 - [spectatorsGenerateChunks](#spectatorsgeneratechunks)
 - [tntExplosionDropDecay](#tntexplosiondropdecay)
@@ -498,6 +499,15 @@ When it snows, layers of snow form on the ground up to at most this number of la
 - Default value: `1`
 - Suggested options: `0`, `1`, `8`
 - Categories: `GAMERULE`, `WORLD_UPDATES`
+
+### spawnChunkRadius
+Spawn chunk radius
+
+Amount of chunks that stay loaded around the overworld spawn position
+- Type: `int`
+- Default value: `2`
+- Suggested options: `0`, `2`, `10`, `32`
+- Categories: `GAMERULE`, `MISC`
 
 ### spawnRadius
 Respawn location radius

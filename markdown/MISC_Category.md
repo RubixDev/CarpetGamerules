@@ -2,12 +2,13 @@
 
 For a list of all implemented Rules go [here](../README.md)
 ## Index
-Count: 5
+Count: 6
 - [commandModificationBlockLimit](#commandmodificationblocklimit)
 - [globalSoundEvents](#globalsoundevents)
 - [maxCommandChainLength](#maxcommandchainlength)
 - [maxCommandForkCount](#maxcommandforkcount)
 - [reducedDebugInfo](#reduceddebuginfo)
+- [spawnChunkRadius](#spawnchunkradius)
 
 ## Rules in MISC Category
 
@@ -54,4 +55,13 @@ Limits contents of debug screen
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
+- Categories: `GAMERULE`, `MISC`
+
+### spawnChunkRadius
+Spawn chunk radius
+
+Amount of chunks that stay loaded around the overworld spawn position
+- Type: `int`
+- Default value: `2`
+- Suggested options: `0`, `2`, `10`, `32`
 - Categories: `GAMERULE`, `MISC`
