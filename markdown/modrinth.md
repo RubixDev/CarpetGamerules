@@ -5,12 +5,13 @@ Extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet) t
 **Visit the [GitHub page](https://github.com/RubixDev/CarpetGamerules) for a more detailed explanation.**
 
 ## List of Gamerules
-Count: 51
+Count: 52
 - announceAdvancements
 - blockExplosionDropDecay
 - commandBlockOutput
 - commandModificationBlockLimit
 - disableElytraMovementCheck
+- disablePlayerMovementCheck
 - disableRaids
 - doDaylightCycle
 - doEntityDrops

@@ -20,6 +20,8 @@ carpetgamerules:
       desc: Disable elytra movement check
       extra:
         '0': Whether the server should skip checking player speed when the player is wearing elytra. Often helps with jittering due to lag in multiplayer
+    disablePlayerMovementCheck:
+      desc: Disable player movement check
     disableRaids:
       desc: Disable raids
       extra:

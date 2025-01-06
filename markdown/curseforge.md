@@ -5,12 +5,13 @@ Extension Mod for [gnembon's Carpet Mod](https://www.curseforge.com/minecraft/mc
 **Visit the [GitHub page](https://github.com/RubixDev/CarpetGamerules) for a more detailed explanation.**
 
 ## List of Gamerules
-Count: 51  
+Count: 52  
 - announceAdvancements  
 - blockExplosionDropDecay  
 - commandBlockOutput  
 - commandModificationBlockLimit  
 - disableElytraMovementCheck  
+- disablePlayerMovementCheck  
 - disableRaids  
 - doDaylightCycle  
 - doEntityDrops  

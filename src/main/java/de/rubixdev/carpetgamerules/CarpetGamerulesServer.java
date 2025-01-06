@@ -125,7 +125,11 @@ public class CarpetGamerulesServer implements CarpetExtension, ModInitializer {
     public void onServerLoadedWorlds(MinecraftServer server) {
         Set<String> allGamerules = new HashSet<>();
 
-        GameRules.accept(new GameRules.Visitor() {
+        //#if MC >= 12103
+        server.getGameRules().accept(new GameRules.Visitor() {
+        //#else
+        //$$ GameRules.accept(new GameRules.Visitor() {
+        //#endif
             @Override
             public <T extends GameRules.Rule<T>> void visit(GameRules.Key<T> key, GameRules.Type<T> type) {
                 allGamerules.add(key.getName());

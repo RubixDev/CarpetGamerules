@@ -2,8 +2,9 @@
 
 For a list of all implemented Rules go [here](../README.md)
 ## Index
-Count: 15
+Count: 16
 - [disableElytraMovementCheck](#disableelytramovementcheck)
+- [disablePlayerMovementCheck](#disableplayermovementcheck)
 - [doImmediateRespawn](#doimmediaterespawn)
 - [doLimitedCrafting](#dolimitedcrafting)
 - [drowningDamage](#drowningdamage)
@@ -25,6 +26,13 @@ Count: 15
 Disable elytra movement check
 
 Whether the server should skip checking player speed when the player is wearing elytra. Often helps with jittering due to lag in multiplayer
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `GAMERULE`, `PLAYER`
+
+### disablePlayerMovementCheck
+Disable player movement check
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`

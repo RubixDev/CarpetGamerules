@@ -60,6 +60,11 @@ public class CarpetGamerulesSettings {
     //#endif
     public static boolean disableElytraMovementCheck = false;
 
+    //#if MC >= 12103
+    @Rule(categories = {GAMERULE, PLAYER})
+    public static boolean disablePlayerMovementCheck = false;
+    //#endif
+
     //#if MC >= 11901
     @Rule(categories = {GAMERULE, MOBS})
     //#else

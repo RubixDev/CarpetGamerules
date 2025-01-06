@@ -31,12 +31,13 @@ An extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet
 - [`WORLD_UPDATES`](markdown/WORLD_UPDATES_Category.md)
 
 ## Index
-Count: 51
+Count: 52
 - [announceAdvancements](#announceadvancements)
 - [blockExplosionDropDecay](#blockexplosiondropdecay)
 - [commandBlockOutput](#commandblockoutput)
 - [commandModificationBlockLimit](#commandmodificationblocklimit)
 - [disableElytraMovementCheck](#disableelytramovementcheck)
+- [disablePlayerMovementCheck](#disableplayermovementcheck)
 - [disableRaids](#disableraids)
 - [doDaylightCycle](#dodaylightcycle)
 - [doEntityDrops](#doentitydrops)
@@ -126,6 +127,13 @@ Number of blocks that can be changed at once by one command, such as fill or clo
 Disable elytra movement check
 
 Whether the server should skip checking player speed when the player is wearing elytra. Often helps with jittering due to lag in multiplayer
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `GAMERULE`, `PLAYER`
+
+### disablePlayerMovementCheck
+Disable player movement check
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
