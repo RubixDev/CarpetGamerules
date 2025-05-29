@@ -12,9 +12,14 @@ public class CarpetGamerulesSettings {
     public static final String MOBS = "mobs";
     public static final String SPAWNING = "spawning";
     public static final String DROPS = "drops";
-    public static final String WORLD_UPDATES = "world_updates";
+    public static final String UPDATES = "updates";
     public static final String CHAT = "chat";
     public static final String MISC = "miscellaneous";
+
+    //#if MC >= 12105
+    @Rule(categories = {GAMERULE, UPDATES})
+    public static boolean allowFireTicksAwayFromPlayer = false;
+    //#endif
 
     //#if MC >= 11901
     @Rule(categories = {GAMERULE, CHAT})
@@ -76,12 +81,12 @@ public class CarpetGamerulesSettings {
     public static boolean disableRaids = false;
 
     //#if MC >= 11901
-    @Rule(categories = {GAMERULE, WORLD_UPDATES})
+    @Rule(categories = {GAMERULE, UPDATES})
     //#else
     //$$ @Rule(
     //$$         desc = "Advance time of day",
     //$$         extra = "Whether the daylight cycle and moon phases progress",
-    //$$         category = {GAMERULE, WORLD_UPDATES})
+    //$$         category = {GAMERULE, UPDATES})
     //#endif
     public static boolean doDaylightCycle = true;
 
@@ -96,12 +101,12 @@ public class CarpetGamerulesSettings {
     public static boolean doEntityDrops = true;
 
     //#if MC >= 11901
-    @Rule(categories = {GAMERULE, WORLD_UPDATES})
+    @Rule(categories = {GAMERULE, UPDATES})
     //#else
     //$$ @Rule(
     //$$         desc = "Update fire",
     //$$         extra = "Whether fire should spread and naturally extinguish",
-    //$$         category = {GAMERULE, WORLD_UPDATES})
+    //$$         category = {GAMERULE, UPDATES})
     //#endif
     public static boolean doFireTick = true;
 
@@ -194,7 +199,7 @@ public class CarpetGamerulesSettings {
     //#endif
 
     //#if MC >= 11901
-    @Rule(categories = {GAMERULE, WORLD_UPDATES})
+    @Rule(categories = {GAMERULE, UPDATES})
     public static boolean doVinesSpread = true;
     //#endif
 
@@ -204,12 +209,12 @@ public class CarpetGamerulesSettings {
     //#endif
 
     //#if MC >= 11901
-    @Rule(categories = {GAMERULE, WORLD_UPDATES})
+    @Rule(categories = {GAMERULE, UPDATES})
     //#else
     //$$ @Rule(
     //$$         desc = "Update weather",
     //$$         extra = "Whether the weather can change naturally. The `/weather` command can still change weather",
-    //$$         category = {GAMERULE, WORLD_UPDATES})
+    //$$         category = {GAMERULE, UPDATES})
     //#endif
     public static boolean doWeatherCycle = true;
 
@@ -294,7 +299,7 @@ public class CarpetGamerulesSettings {
     public static boolean keepInventory = false;
 
     //#if MC >= 11901
-    @Rule(categories = {GAMERULE, WORLD_UPDATES})
+    @Rule(categories = {GAMERULE, UPDATES})
     public static boolean lavaSourceConversion = false;
     //#endif
 
@@ -413,7 +418,7 @@ public class CarpetGamerulesSettings {
 
     //#if MC >= 11901
     @Rule(
-            categories = {GAMERULE, WORLD_UPDATES},
+            categories = {GAMERULE, UPDATES},
             strict = false,
             options = {"0", "3", "30", "300", "3000", "4096"})
     //#else
@@ -425,7 +430,7 @@ public class CarpetGamerulesSettings {
     //$$             "Setting to a high integer results in high speeds of decay and growth",
     //$$             "Numbers over 4096 make plant growth or leaf decay instantaneous"
     //$$         },
-    //$$         category = {GAMERULE, WORLD_UPDATES},
+    //$$         category = {GAMERULE, UPDATES},
     //$$         strict = false,
     //$$         options = {"0", "3", "30", "300", "3000", "4096"})
     //#endif
@@ -469,7 +474,7 @@ public class CarpetGamerulesSettings {
 
     //#if MC >= 11901
     @Rule(
-            categories = {GAMERULE, WORLD_UPDATES},
+            categories = {GAMERULE, UPDATES},
             strict = false,
             options = {"0", "1", "8"})
     public static int snowAccumulationHeight = 1;
@@ -509,6 +514,11 @@ public class CarpetGamerulesSettings {
     //#endif
     public static boolean spectatorsGenerateChunks = true;
 
+    //#if MC >= 12105
+    @Rule(categories = {GAMERULE, MISC})
+    public static boolean tntExplodes = true;
+    //#endif
+
     //#if MC >= 11901
     @Rule(categories = {GAMERULE, DROPS})
     public static boolean tntExplosionDropDecay = false;
@@ -528,7 +538,7 @@ public class CarpetGamerulesSettings {
     //#endif
 
     //#if MC >= 11901
-    @Rule(categories = {GAMERULE, WORLD_UPDATES})
+    @Rule(categories = {GAMERULE, UPDATES})
     public static boolean waterSourceConversion = true;
     //#endif
 }

@@ -2,13 +2,14 @@
 
 For a list of all implemented Rules go [here](../README.md)
 ## Index
-Count: 6
+Count: 7
 - [commandModificationBlockLimit](#commandmodificationblocklimit)
 - [globalSoundEvents](#globalsoundevents)
 - [maxCommandChainLength](#maxcommandchainlength)
 - [maxCommandForkCount](#maxcommandforkcount)
 - [reducedDebugInfo](#reduceddebuginfo)
 - [spawnChunkRadius](#spawnchunkradius)
+- [tntExplodes](#tntexplodes)
 
 ## Rules in MISC Category
 
@@ -64,4 +65,11 @@ Amount of chunks that stay loaded around the overworld spawn position
 - Type: `int`
 - Default value: `2`
 - Suggested options: `0`, `2`, `10`, `32`
+- Categories: `GAMERULE`, `MISC`
+
+### tntExplodes
+Allow TNT to be activated and to explode
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
 - Categories: `GAMERULE`, `MISC`

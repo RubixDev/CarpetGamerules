@@ -48,10 +48,6 @@ loom {
 	}
 }
 
-remapJar {
-	remapperIsolation = true
-}
-
 sourceCompatibility = JAVA_COMPATIBILITY
 targetCompatibility = JAVA_COMPATIBILITY
 

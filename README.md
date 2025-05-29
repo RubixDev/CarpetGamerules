@@ -28,10 +28,11 @@ An extension for [gnembon's Carpet Mod](https://github.com/gnembon/fabric-carpet
 - [`MOBS`](markdown/MOBS_Category.md)
 - [`PLAYER`](markdown/PLAYER_Category.md)
 - [`SPAWNING`](markdown/SPAWNING_Category.md)
-- [`WORLD_UPDATES`](markdown/WORLD_UPDATES_Category.md)
+- [`UPDATES`](markdown/UPDATES_Category.md)
 
 ## Index
-Count: 52
+Count: 54
+- [allowFireTicksAwayFromPlayer](#allowfireticksawayfromplayer)
 - [announceAdvancements](#announceadvancements)
 - [blockExplosionDropDecay](#blockexplosiondropdecay)
 - [commandBlockOutput](#commandblockoutput)
@@ -81,11 +82,21 @@ Count: 52
 - [spawnChunkRadius](#spawnchunkradius)
 - [spawnRadius](#spawnradius)
 - [spectatorsGenerateChunks](#spectatorsgeneratechunks)
+- [tntExplodes](#tntexplodes)
 - [tntExplosionDropDecay](#tntexplosiondropdecay)
 - [universalAnger](#universalanger)
 - [waterSourceConversion](#watersourceconversion)
 
 ## Implemented Rules
+
+### allowFireTicksAwayFromPlayer
+Tick fire away from players
+
+Controls whether or not fire and lava should be able to tick further than 8 chunks away from any player
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `GAMERULE`, `UPDATES`
 
 ### announceAdvancements
 Announce advancements
@@ -155,7 +166,7 @@ Whether the daylight cycle and moon phases progress
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
+- Categories: `GAMERULE`, `UPDATES`
 
 ### doEntityDrops
 Drop entity equipment
@@ -173,7 +184,7 @@ Whether fire should spread and naturally extinguish
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
+- Categories: `GAMERULE`, `UPDATES`
 
 ### doImmediateRespawn
 Respawn immediately
@@ -254,7 +265,7 @@ Controls whether or not the Vines block spreads randomly to adjacent blocks. Doe
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
+- Categories: `GAMERULE`, `UPDATES`
 
 ### doWardenSpawning
 Spawn wardens
@@ -272,7 +283,7 @@ Whether the weather can change naturally. The `/weather` command can still chang
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
+- Categories: `GAMERULE`, `UPDATES`
 
 ### drowningDamage
 Deal drowning damage
@@ -353,7 +364,7 @@ When flowing lava is surrounded on two sides by lava sources it converts into a 
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
+- Categories: `GAMERULE`, `UPDATES`
 
 ### logAdminCommands
 Broadcast admin commands
@@ -468,7 +479,7 @@ Numbers over 4096 make plant growth or leaf decay instantaneous
 - Type: `int`
 - Default value: `3`
 - Suggested options: `0`, `3`, `30`, `300`, `3000`, `4096`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
+- Categories: `GAMERULE`, `UPDATES`
 
 ### reducedDebugInfo
 Reduce debug info
@@ -506,7 +517,7 @@ When it snows, layers of snow form on the ground up to at most this number of la
 - Type: `int`
 - Default value: `1`
 - Suggested options: `0`, `1`, `8`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
+- Categories: `GAMERULE`, `UPDATES`
 
 ### spawnChunkRadius
 Spawn chunk radius
@@ -535,6 +546,13 @@ Whether players in spectator mode can generate chunks
 - Required options: `true`, `false`
 - Categories: `GAMERULE`, `PLAYER`
 
+### tntExplodes
+Allow TNT to be activated and to explode
+- Type: `boolean`
+- Default value: `true`
+- Required options: `true`, `false`
+- Categories: `GAMERULE`, `MISC`
+
 ### tntExplosionDropDecay
 In TNT explosions, some blocks won't drop their loot
 
@@ -560,4 +578,4 @@ When flowing water is surrounded on two sides by water sources it converts into 
 - Type: `boolean`
 - Default value: `true`
 - Required options: `true`, `false`
-- Categories: `GAMERULE`, `WORLD_UPDATES`
+- Categories: `GAMERULE`, `UPDATES`

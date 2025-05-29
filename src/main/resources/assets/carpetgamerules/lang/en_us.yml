@@ -1,5 +1,9 @@
 carpetgamerules:
   rule:
+    allowFireTicksAwayFromPlayer:
+      desc: Tick fire away from players
+      extra:
+        '0': Controls whether or not fire and lava should be able to tick further than 8 chunks away from any player
     announceAdvancements:
       desc: Announce advancements
       extra:
@@ -203,6 +207,8 @@ carpetgamerules:
       desc: Allow spectators to generate terrain
       extra:
         '0': Whether players in spectator mode can generate chunks
+    tntExplodes:
+      desc: Allow TNT to be activated and to explode
     tntExplosionDropDecay:
       desc: In TNT explosions, some blocks won't drop their loot
       extra:
